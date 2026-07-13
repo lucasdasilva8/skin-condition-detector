@@ -69,6 +69,15 @@
           <h2 id="condition-name" class="condition-name"></h2>
           <p id="condition-description" class="condition-lead"></p>
 
+          <div id="analysis-assist" class="result-block analysis-assist hidden">
+            <h3>Vision analysis notes</h3>
+            <p id="assist-support" class="body-text"></p>
+            <p id="assist-features" class="body-text"></p>
+            <p id="assist-quality" class="assist-quality"></p>
+            <ul id="assist-watch" class="signs-list"></ul>
+            <p id="assist-error" class="assist-error hidden"></p>
+          </div>
+
           <div class="result-block">
             <h3>Explanation</h3>
             <p id="explanation" class="body-text"></p>
@@ -100,6 +109,28 @@
             <h3>Other possible matches</h3>
             <div id="alternatives-list" class="alternatives-list"></div>
           </div>
+
+          <section id="chat-panel" class="chat-panel hidden" aria-label="Ask about this result">
+            <div class="chat-header">
+              <h3>Talk through this result</h3>
+              <p id="chat-status" class="chat-status muted"></p>
+            </div>
+            <div id="chat-suggestions" class="chat-suggestions"></div>
+            <div id="chat-messages" class="chat-messages" aria-live="polite"></div>
+            <form id="chat-form" class="chat-form">
+              <input
+                id="chat-input"
+                type="text"
+                maxlength="2000"
+                placeholder="Ask about signs, alternatives, or when to see a doctor…"
+                autocomplete="off"
+              />
+              <button id="chat-send" type="submit" class="btn btn-primary">Send</button>
+            </form>
+            <p class="chat-disclaimer">
+              Educational chat only — not a diagnosis. For medical advice, see a clinician.
+            </p>
+          </section>
 
           <div class="cta">
             <p id="cta-text" class="cta-text"></p>

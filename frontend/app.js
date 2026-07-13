@@ -19,6 +19,12 @@ if (document.getElementById("dropzone")) {
   const conditionDescription = document.getElementById("condition-description");
   const confidenceValue = document.getElementById("confidence-value");
   const ensembleNote = document.getElementById("ensemble-note");
+  const analysisAssist = document.getElementById("analysis-assist");
+  const assistSupport = document.getElementById("assist-support");
+  const assistFeatures = document.getElementById("assist-features");
+  const assistQuality = document.getElementById("assist-quality");
+  const assistWatch = document.getElementById("assist-watch");
+  const assistError = document.getElementById("assist-error");
   const explanation = document.getElementById("explanation");
   const commonSigns = document.getElementById("common-signs");
   const whenToSeeDoctor = document.getElementById("when-to-see-doctor");
@@ -27,13 +33,50 @@ if (document.getElementById("dropzone")) {
   const alternativesSection = document.getElementById("alternatives");
   const alternativesList = document.getElementById("alternatives-list");
   const ctaText = document.getElementById("cta-text");
+  const chatPanel = document.getElementById("chat-panel");
+  const chatStatus = document.getElementById("chat-status");
+  const chatSuggestions = document.getElementById("chat-suggestions");
+  const chatMessages = document.getElementById("chat-messages");
+  const chatForm = document.getElementById("chat-form");
+  const chatInput = document.getElementById("chat-input");
+  const chatSend = document.getElementById("chat-send");
 
   let selectedFile = null;
+  let latestAnalysis = null;
+  let chatHistory = [];
+  let imageDataUrl = null;
+  let ollamaReady = false;
 
   function setStatus(message, isError = false) {
     statusEl.textContent = message;
     statusEl.classList.toggle("error", isError);
   }
+
+  async function refreshOllamaStatus() {
+    try {
+      const response = await fetch(`${API_URL}/health`);
+      const data = await response.json();
+      ollamaReady = Boolean(data.ollama?.ready);
+      if (chatStatus) {
+        if (ollamaReady) {
+          chatStatus.textContent = `Local assistant ready (${data.ollama.model}).`;
+        } else if (data.ollama?.available) {
+          chatStatus.textContent =
+            "Ollama is running, but no vision model is installed (try qwen2.5vl:7b).";
+        } else {
+          chatStatus.textContent =
+            "Chat unlocks when Ollama is running locally with a vision model.";
+        }
+      }
+    } catch {
+      ollamaReady = false;
+      if (chatStatus) {
+        chatStatus.textContent = "Could not reach the API for assistant status.";
+      }
+    }
+  }
+
+  refreshOllamaStatus();
 
   function handleFile(file) {
     if (!file) return;
@@ -55,7 +98,17 @@ if (document.getElementById("dropzone")) {
     analyzeBtn.disabled = false;
     clearBtn.classList.remove("hidden");
     resultsSection.classList.add("hidden");
+    chatPanel?.classList.add("hidden");
+    latestAnalysis = null;
+    chatHistory = [];
+    imageDataUrl = null;
     setStatus("");
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      imageDataUrl = typeof reader.result === "string" ? reader.result : null;
+    };
+    reader.readAsDataURL(file);
   }
 
   dropzone.addEventListener("click", () => fileInput.click());
@@ -94,6 +147,10 @@ if (document.getElementById("dropzone")) {
     analyzeBtn.disabled = true;
     clearBtn.classList.add("hidden");
     resultsSection.classList.add("hidden");
+    chatPanel?.classList.add("hidden");
+    latestAnalysis = null;
+    chatHistory = [];
+    imageDataUrl = null;
     setStatus("");
   });
 
@@ -101,10 +158,15 @@ if (document.getElementById("dropzone")) {
     if (!selectedFile) return;
 
     analyzeBtn.disabled = true;
-    setStatus("Analyzing…");
+    setStatus(
+      ollamaReady
+        ? "Analyzing with ensemble + vision assistant…"
+        : "Analyzing with ensemble…"
+    );
 
     const formData = new FormData();
     formData.append("file", selectedFile);
+    formData.append("enhance", "true");
 
     try {
       const response = await fetch(`${API_URL}/predict`, {
@@ -182,6 +244,52 @@ if (document.getElementById("dropzone")) {
       .join("");
   }
 
+  function renderAnalysisAssist(data) {
+    if (!analysisAssist) return;
+    const assist = data.assist;
+    if (!assist) {
+      analysisAssist.classList.add("hidden");
+      return;
+    }
+
+    analysisAssist.classList.remove("hidden");
+
+    if (assist.error && !assist.analysis_support) {
+      assistSupport.textContent = "";
+      assistFeatures.textContent = "";
+      assistQuality.textContent = "";
+      assistWatch.innerHTML = "";
+      assistError.textContent =
+        assist.error + (assist.hint ? ` ${assist.hint}` : "");
+      assistError.classList.remove("hidden");
+      return;
+    }
+
+    assistError.classList.add("hidden");
+    assistSupport.textContent = assist.analysis_support || "";
+    assistFeatures.textContent = assist.visible_features || "";
+
+    const quality = (assist.photo_quality || "").toLowerCase();
+    if (quality) {
+      const score =
+        typeof assist.quality_score === "number"
+          ? ` · ${Math.round(assist.quality_score * 100)}%`
+          : "";
+      assistQuality.textContent = `Photo quality for analysis: ${quality}${score}${
+        assist.recommend_retake ? " · a clearer retake may help" : ""
+      }`;
+      assistQuality.className = `assist-quality quality-${quality}`;
+    } else {
+      assistQuality.textContent = "";
+    }
+
+    const watch = [
+      ...(assist.what_to_watch || []),
+      ...(assist.photo_tips || []).map((tip) => `Photo tip: ${tip}`),
+    ];
+    assistWatch.innerHTML = watch.map((item) => `<li>${item}</li>`).join("");
+  }
+
   function renderEnsembleNote(data) {
     if (!ensembleNote) return;
 
@@ -201,7 +309,7 @@ if (document.getElementById("dropzone")) {
 
     if (data.uncertain || ensemble.uncertain) {
       parts.push(
-        "This match is uncertain — consider the alternatives below and ask a dermatologist if you are worried."
+        "This match is uncertain — consider the alternatives below and ask in chat if you want help comparing them."
       );
       ensembleNote.classList.add("uncertain");
     } else {
@@ -218,6 +326,107 @@ if (document.getElementById("dropzone")) {
     ensembleNote.classList.remove("hidden");
   }
 
+  function appendChatMessage(role, content) {
+    const bubble = document.createElement("div");
+    bubble.className = `chat-bubble chat-${role}`;
+    bubble.textContent = content;
+    chatMessages.appendChild(bubble);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function setupChat(data) {
+    if (!chatPanel) return;
+
+    latestAnalysis = data;
+    chatHistory = [];
+    chatMessages.innerHTML = "";
+    chatPanel.classList.remove("hidden");
+
+    const assist = data.assist || {};
+    const opening =
+      assist.opening_message ||
+      (assist.ready || assist.analysis_support
+        ? "Ask me about this result, what to watch for, or how it compares to the alternatives."
+        : "Chat needs Ollama running locally. You can still read the ensemble result above.");
+
+    appendChatMessage("assistant", opening);
+    chatHistory.push({ role: "assistant", content: opening });
+
+    const suggestions = [];
+    if (data.prediction_name) {
+      suggestions.push(`What does ${data.prediction_name} usually look like?`);
+    }
+    suggestions.push("How does this compare to the other possible matches?");
+    suggestions.push("When should I see a dermatologist about this?");
+    if (assist.questions_to_ask_doctor?.length) {
+      suggestions.push(assist.questions_to_ask_doctor[0]);
+    }
+
+    chatSuggestions.innerHTML = "";
+    suggestions.slice(0, 4).forEach((text) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "chat-suggestion";
+      btn.textContent = text;
+      btn.addEventListener("click", () => {
+        chatInput.value = text;
+        chatForm.requestSubmit();
+      });
+      chatSuggestions.appendChild(btn);
+    });
+
+    const canChat = Boolean(assist.ready || assist.analysis_support || ollamaReady);
+    chatInput.disabled = !canChat;
+    chatSend.disabled = !canChat;
+    refreshOllamaStatus();
+  }
+
+  chatForm?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (!latestAnalysis || !chatInput.value.trim()) return;
+
+    const message = chatInput.value.trim();
+    chatInput.value = "";
+    appendChatMessage("user", message);
+    chatHistory.push({ role: "user", content: message });
+
+    chatSend.disabled = true;
+    chatInput.disabled = true;
+    appendChatMessage("assistant", "Thinking…");
+
+    try {
+      const response = await fetch(`${API_URL}/chat`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          message,
+          analysis: latestAnalysis,
+          history: chatHistory.slice(0, -1),
+          image_base64: imageDataUrl,
+        }),
+      });
+      const data = await response.json();
+      chatMessages.lastChild?.remove();
+
+      if (!response.ok) {
+        throw new Error(data.detail || "Chat failed.");
+      }
+
+      appendChatMessage("assistant", data.reply);
+      chatHistory.push({ role: "assistant", content: data.reply });
+    } catch (error) {
+      chatMessages.lastChild?.remove();
+      appendChatMessage(
+        "assistant",
+        error.message || "Could not reach the assistant. Is Ollama running?"
+      );
+    } finally {
+      chatSend.disabled = false;
+      chatInput.disabled = false;
+      chatInput.focus();
+    }
+  });
+
   function showResults(data) {
     const condition = data.condition || {};
     const risk = data.risk_level || "moderate";
@@ -229,6 +438,7 @@ if (document.getElementById("dropzone")) {
     confidenceValue.textContent = `${confidencePct}% confidence`;
 
     renderEnsembleNote(data);
+    renderAnalysisAssist(data);
 
     conditionName.textContent = data.prediction_name || condition.name || "Unknown condition";
     conditionDescription.textContent = condition.description || "";
@@ -260,7 +470,7 @@ if (document.getElementById("dropzone")) {
 
     if (data.uncertain || data.ensemble?.uncertain) {
       ctaText.textContent =
-        "The models did not fully agree or confidence is low. Have a dermatologist review this area if symptoms persist or change.";
+        "The models did not fully agree or confidence is low. Use the chat below to compare options, and see a dermatologist if you are worried.";
     } else if (risk === "high") {
       ctaText.textContent =
         "We recommend scheduling an appointment with a dermatologist as soon as possible.";
@@ -272,6 +482,7 @@ if (document.getElementById("dropzone")) {
         "This appears to be a common benign condition, but see a doctor if you notice any changes.";
     }
 
+    setupChat(data);
     resultsSection.classList.remove("hidden");
   }
 }
