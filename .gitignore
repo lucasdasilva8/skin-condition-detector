@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.DS_Store
+*.pth
+!models/skin_model.pth
+!models/skin_model_efficientnet_b0.pth
+!models/skin_model_mobilenet_v3_large.pth
+!models/.gitkeep
+.ipynb_checkpoints/
+*.log

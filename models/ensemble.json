@@ -1,0 +1,21 @@
+{
+  "models": [
+    {
+      "file": "skin_model.pth",
+      "backbone": "resnet18",
+      "weight": 1.0
+    },
+    {
+      "file": "skin_model_efficientnet_b0.pth",
+      "backbone": "efficientnet_b0",
+      "weight": 1.0
+    },
+    {
+      "file": "skin_model_mobilenet_v3_large.pth",
+      "backbone": "mobilenet_v3_large",
+      "weight": 1.0
+    }
+  ],
+  "uncertain_threshold": 0.35,
+  "close_margin": 0.08
+}

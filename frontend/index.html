@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkinScan — Educational Skin Condition Identifier</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">SkinScan</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="analyze.html" class="nav-link">Analyze</a>
+        <a href="blog.html" class="nav-link">Updates</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-inner">
+        <p class="hero-eyebrow">Educational AI Tool</p>
+        <h1>Understand what you see on your skin</h1>
+        <p class="hero-lead">
+          SkinScan identifies 22 common skin conditions from a photo and provides
+          plain-language explanations, care guidance, and links to trusted medical sources.
+        </p>
+        <a href="analyze.html" class="btn btn-primary btn-lg">Analyze a photo →</a>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section class="section">
+        <h2>What is SkinScan?</h2>
+        <p class="section-lead">
+          SkinScan is an educational screening tool that uses an ensemble of machine learning
+          models trained on thousands of dermatology images. Upload a close-up photo of a skin
+          area and receive an AI-assisted identification with information you can read before
+          seeing a doctor.
+        </p>
+        <div class="disclaimer-box" role="alert">
+          <strong>Not a medical diagnosis.</strong> Results are for learning and awareness only.
+          Always consult a dermatologist for any concerning or changing skin findings.
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>How to use it</h2>
+        <ol class="steps">
+          <li>
+            <span class="step-num">1</span>
+            <div>
+              <strong>Take a clear photo</strong>
+              <p>Close-up, well-lit image of one skin area. JPEG or PNG, max 10 MB.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">2</span>
+            <div>
+              <strong>Upload and analyze</strong>
+              <p>Three models compare your image against 22 common condition categories and combine their scores.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">3</span>
+            <div>
+              <strong>Read the results</strong>
+              <p>Get an explanation, signs to watch for, dermatologist recommendations, and sources.</p>
+            </div>
+          </li>
+        </ol>
+        <a href="analyze.html" class="btn btn-secondary">Go to analyzer</a>
+        <a href="blog.html" class="btn btn-ghost" style="margin-left: 12px">Skin care updates →</a>
+      </section>
+
+      <section class="section">
+        <h2>22 conditions we identify</h2>
+        <p class="section-lead">
+          Covers common inflammatory, infectious, and pigmented skin findings — not every rare disease.
+        </p>
+        <ul id="conditions-grid" class="conditions-grid">
+          <li class="muted">Loading conditions…</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Trusted sources</h2>
+        <p class="section-lead">
+          Every result links to guidance from established medical organizations — mostly
+          <strong>.org</strong> and <strong>.edu</strong> sites. We do not recommend specific products.
+        </p>
+        <ul class="sources-static">
+          <li>
+            <a href="https://www.aad.org" target="_blank" rel="noopener noreferrer">
+              <span class="source-domain">aad.org</span>
+              <span class="source-info">
+                <span class="source-title">American Academy of Dermatology</span>
+                <span class="source-publisher">Condition overviews, prevention, and when to see a doctor</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.mayoclinic.org" target="_blank" rel="noopener noreferrer">
+              <span class="source-domain">mayoclinic.org</span>
+              <span class="source-info">
+                <span class="source-title">Mayo Clinic</span>
+                <span class="source-publisher">Symptoms, causes, and treatment guidance</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.health.harvard.edu" target="_blank" rel="noopener noreferrer">
+              <span class="source-domain">health.harvard.edu</span>
+              <span class="source-info">
+                <span class="source-title">Harvard Health Publishing</span>
+                <span class="source-publisher">Evidence-based patient education</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.cancer.org" target="_blank" rel="noopener noreferrer">
+              <span class="source-domain">cancer.org</span>
+              <span class="source-info">
+                <span class="source-title">American Cancer Society</span>
+                <span class="source-publisher">Skin cancer detection and prevention</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.skincancer.org" target="_blank" rel="noopener noreferrer">
+              <span class="source-domain">skincancer.org</span>
+              <span class="source-info">
+                <span class="source-title">Skin Cancer Foundation</span>
+                <span class="source-publisher">Sun protection and melanoma awareness</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://dermnetnz.org" target="_blank" rel="noopener noreferrer">
+              <span class="source-domain">dermnetnz.org</span>
+              <span class="source-info">
+                <span class="source-title">DermNet NZ</span>
+                <span class="source-publisher">Dermatology image library and condition guides</span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Related project: Melanoma Screen</h2>
+        <div class="related-project">
+          <p class="section-lead">
+            SkinScan covers 22 general skin conditions. If you are specifically concerned about a
+            <strong>mole or pigmented lesion</strong> and want a focused melanoma risk assessment,
+            try my earlier project — <strong>Melanoma Screen</strong>.
+          </p>
+          <ul class="related-features">
+            <li>Binary screening: likely benign vs. possible melanoma</li>
+            <li>Trained on dermatoscopic lesion images (HAM10000)</li>
+            <li>Melanoma probability score with plain-language guidance</li>
+            <li>Best for close-up photos of a single lesion or mole</li>
+          </ul>
+          <a
+            href="https://lucasdasilva8.github.io/melanoma-detector/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary"
+          >
+            Visit Melanoma Screen →
+          </a>
+        </div>
+      </section>
+
+      <section class="section section-cta">
+        <h2>Ready to try it?</h2>
+        <p class="section-lead">Upload a skin photo and get an educational analysis in seconds.</p>
+        <a href="analyze.html" class="btn btn-primary btn-lg">Start analysis →</a>
+      </section>
+    </main>
+
+      <footer class="footer">
+        <p>Educational project — not FDA-approved medical software.</p>
+        <p class="footer-related">
+          <a href="https://lucasdasilva8.github.io/melanoma-detector/" target="_blank" rel="noopener noreferrer">
+            Melanoma Screen
+          </a>
+          — focused melanoma risk tool for moles and lesions
+        </p>
+      </footer>
+
+    <script src="config.js"></script>
+    <script src="home.js"></script>
+  </body>
+</html>

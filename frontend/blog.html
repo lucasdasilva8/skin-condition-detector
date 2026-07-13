@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skin Care Updates — SkinScan</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">SkinScan</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="analyze.html" class="nav-link">Analyze</a>
+        <a href="blog.html" class="nav-link active">Updates</a>
+      </div>
+    </nav>
+
+    <header class="page-hero">
+      <div class="page-hero-inner">
+        <h1>Skin care updates</h1>
+        <p class="page-hero-lead">
+          Recent guidance, research, and dermatologist-backed advice from trusted medical
+          organizations. Refreshed automatically every two weeks.
+        </p>
+        <p id="blog-updated" class="blog-meta">Loading…</p>
+      </div>
+    </header>
+
+    <main class="main-content blog-content">
+      <div class="blog-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="advice">Doctor guidance</button>
+        <button class="filter-btn" data-filter="study">Studies &amp; news</button>
+      </div>
+
+      <div id="blog-posts" class="blog-posts">
+        <p class="muted">Loading articles…</p>
+      </div>
+
+      <section class="section blog-about">
+        <h2>About this page</h2>
+        <p class="section-lead">
+          Articles are pulled from RSS feeds and public pages published by organizations
+          such as Harvard Health, MedlinePlus (NIH), and the Skin Cancer Foundation.
+          We filter for skin-related topics only. This is not medical advice — always
+          follow guidance from your own healthcare provider.
+        </p>
+        <p class="section-lead">
+          Updates run automatically via GitHub Actions on the 1st and 15th of each month
+          (approximately every two weeks).
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Educational project — not FDA-approved medical software.</p>
+      <p class="footer-related">
+        <a href="https://lucasdasilva8.github.io/melanoma-detector/" target="_blank" rel="noopener noreferrer">
+          Melanoma Screen
+        </a>
+        — focused melanoma risk tool for moles and lesions
+      </p>
+    </footer>
+
+    <script src="blog.js"></script>
+  </body>
+</html>

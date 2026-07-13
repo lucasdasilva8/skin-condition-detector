@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analyze — SkinScan</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">SkinScan</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="analyze.html" class="nav-link active">Analyze</a>
+        <a href="blog.html" class="nav-link">Updates</a>
+      </div>
+    </nav>
+
+    <div class="page analyze-page">
+      <header class="page-header">
+        <h1>Analyze a skin photo</h1>
+        <p class="page-lead">
+          Upload a close-up image for AI-assisted identification. Not a medical diagnosis.
+        </p>
+      </header>
+
+      <main>
+        <section class="upload-section">
+          <div id="dropzone" class="dropzone" tabindex="0" role="button" aria-label="Upload image">
+            <input type="file" id="file-input" accept="image/jpeg,image/png" hidden />
+            <div class="dropzone-content">
+              <p class="dropzone-label">Drop your image here</p>
+              <p class="dropzone-hint">or click to browse · JPEG/PNG · max 10 MB</p>
+            </div>
+            <img id="preview" class="preview hidden" alt="Uploaded skin photo preview" />
+          </div>
+
+          <div class="actions">
+            <button id="analyze-btn" class="btn btn-primary" disabled>Analyze</button>
+            <button id="clear-btn" class="btn btn-ghost hidden">Clear</button>
+          </div>
+          <p id="status" class="status" aria-live="polite"></p>
+        </section>
+
+        <aside class="tips-card">
+          <h3>Photo tips</h3>
+          <ul>
+            <li>Close-up of one skin area</li>
+            <li>Bright, even lighting</li>
+            <li>Steady and in focus</li>
+            <li>No filters or heavy editing</li>
+          </ul>
+        </aside>
+
+        <section id="results" class="results hidden" aria-live="polite">
+          <div class="result-header">
+            <span id="risk-badge" class="risk-badge"></span>
+            <span id="confidence-value" class="confidence-pill"></span>
+          </div>
+
+          <p id="ensemble-note" class="ensemble-note hidden" aria-live="polite"></p>
+
+          <h2 id="condition-name" class="condition-name"></h2>
+          <p id="condition-description" class="condition-lead"></p>
+
+          <div class="result-block">
+            <h3>Explanation</h3>
+            <p id="explanation" class="body-text"></p>
+          </div>
+
+          <div class="result-block">
+            <h3>Common signs</h3>
+            <ul id="common-signs" class="signs-list"></ul>
+          </div>
+
+          <div class="result-block">
+            <h3>When to see a doctor</h3>
+            <p id="when-to-see-doctor" class="body-text"></p>
+          </div>
+
+          <div class="result-block">
+            <h3>What dermatologists recommend</h3>
+            <p class="actions-intro">General care guidance — not specific product recommendations.</p>
+            <ul id="recommended-actions" class="actions-list"></ul>
+          </div>
+
+          <div class="result-block">
+            <h3>Learn more</h3>
+            <p class="sources-intro">Trusted resources from medical organizations:</p>
+            <ul id="sources-list" class="sources-list"></ul>
+          </div>
+
+          <div id="alternatives" class="alternatives hidden">
+            <h3>Other possible matches</h3>
+            <div id="alternatives-list" class="alternatives-list"></div>
+          </div>
+
+          <div class="cta">
+            <p id="cta-text" class="cta-text"></p>
+            <a
+              href="https://www.aad.org/public/diseases/skin-cancer/find-a-derm"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="link-out"
+            >
+              Find a dermatologist →
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>Educational project — not FDA-approved medical software.</p>
+        <p class="footer-related">
+          Focused on a mole or lesion?
+          <a href="https://lucasdasilva8.github.io/melanoma-detector/" target="_blank" rel="noopener noreferrer">
+            Try Melanoma Screen →
+          </a>
+        </p>
+      </footer>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
