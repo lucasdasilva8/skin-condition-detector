@@ -70,7 +70,14 @@ function habitHomeItem(habit, state, store) {
   `;
 }
 
+function isNativeApp() {
+  return Boolean(
+    window.APP_CONFIG?.IS_NATIVE || window.Capacitor?.isNativePlatform?.()
+  );
+}
+
 function renderHomeHabits() {
+  if (!isNativeApp()) return;
   const store = window.SkinScanHabits;
   const listEl = document.getElementById("home-habits-list");
   const progressEl = document.getElementById("home-habits-progress");
@@ -121,4 +128,6 @@ window.addEventListener("skinscan-habits-updated", renderHomeHabits);
 
 renderConditionsGrid();
 refreshConditionsFromApi();
-renderHomeHabits();
+if (isNativeApp()) {
+  renderHomeHabits();
+}

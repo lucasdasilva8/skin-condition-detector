@@ -19,7 +19,7 @@
         <a href="index.html" class="nav-link">Home</a>
         <a href="analyze.html" class="nav-link">Analyze</a>
         <a href="history.html" class="nav-link">History</a>
-        <a href="reminders.html" class="nav-link active">Habits</a>
+        <a href="reminders.html" class="nav-link active app-only">Habits</a>
         <a href="blog.html" class="nav-link">Updates</a>
         <a href="about.html" class="nav-link">About</a>
       </div>
@@ -85,6 +85,16 @@
 
     <script src="native.js"></script>
     <script src="config.js"></script>
+    <script>
+      (function () {
+        const native = Boolean(
+          window.APP_CONFIG?.IS_NATIVE || window.Capacitor?.isNativePlatform?.()
+        );
+        if (!native) {
+          location.replace("index.html");
+        }
+      })();
+    </script>
     <script src="reminders-store.js"></script>
     <script src="reminders.js"></script>
     <script src="tabs.js"></script>

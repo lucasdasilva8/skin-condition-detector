@@ -297,6 +297,7 @@ if (document.getElementById("dropzone")) {
   }
 
   function renderHabitSuggestions(data) {
+    if (!window.APP_CONFIG?.IS_NATIVE) return;
     if (!habitSuggest || !habitSuggestList || !window.SkinScanHabitSuggestions) {
       return;
     }
