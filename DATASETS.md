@@ -48,6 +48,7 @@ Even with 22 classes, this does **not** cover all dermatology:
 
 ### Future upgrades
 
+- Measure + tune with `scripts/evaluate_ensemble.py` (see [MODELING.md](MODELING.md))
 - Merge [SCIN](https://github.com/google-research-datasets/scin) (Google) for more diverse real-world photos
 - Add Fitzpatrick17k for broader skin tone coverage
 - Fine-tune on phone-photo feedback over time

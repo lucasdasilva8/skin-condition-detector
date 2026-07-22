@@ -18,7 +18,10 @@
       <div class="nav-links">
         <a href="index.html" class="nav-link active">Home</a>
         <a href="analyze.html" class="nav-link">Analyze</a>
+        <a href="history.html" class="nav-link">History</a>
+        <a href="reminders.html" class="nav-link">Habits</a>
         <a href="blog.html" class="nav-link">Updates</a>
+        <a href="about.html" class="nav-link">About</a>
       </div>
     </nav>
 
@@ -75,7 +78,17 @@
           </li>
         </ol>
         <a href="analyze.html" class="btn btn-secondary">Go to analyzer</a>
+        <a href="history.html" class="btn btn-ghost" style="margin-left: 12px">Past scans</a>
         <a href="blog.html" class="btn btn-ghost" style="margin-left: 12px">Skin care updates →</a>
+      </section>
+
+      <section class="section habits-home-section">
+        <div class="habits-home-header">
+          <h2>Today’s habits</h2>
+          <a href="reminders.html" class="btn btn-ghost">Open Habits →</a>
+        </div>
+        <p id="home-habits-progress" class="section-lead">Loading today’s checklist…</p>
+        <div id="home-habits-list" class="habit-today-groups"></div>
       </section>
 
       <section class="section">
@@ -84,7 +97,28 @@
           Covers common inflammatory, infectious, and pigmented skin findings — not every rare disease.
         </p>
         <ul id="conditions-grid" class="conditions-grid">
-          <li class="muted">Loading conditions…</li>
+          <li class="condition-chip">Acne</li>
+          <li class="condition-chip">Actinic Keratosis</li>
+          <li class="condition-chip">Benign Tumor</li>
+          <li class="condition-chip">Bullous</li>
+          <li class="condition-chip">Candidiasis</li>
+          <li class="condition-chip">Drug Reaction</li>
+          <li class="condition-chip">Eczema</li>
+          <li class="condition-chip">Bites/Infestations</li>
+          <li class="condition-chip">Lichen</li>
+          <li class="condition-chip">Lupus</li>
+          <li class="condition-chip">Moles</li>
+          <li class="condition-chip">Psoriasis</li>
+          <li class="condition-chip">Rosacea</li>
+          <li class="condition-chip">Seborrheic Keratosis</li>
+          <li class="condition-chip">Skin Cancer</li>
+          <li class="condition-chip">Sun Damage</li>
+          <li class="condition-chip">Tinea</li>
+          <li class="condition-chip">Normal</li>
+          <li class="condition-chip">Vascular Tumor</li>
+          <li class="condition-chip">Vasculitis</li>
+          <li class="condition-chip">Vitiligo</li>
+          <li class="condition-chip">Warts</li>
         </ul>
       </section>
 
@@ -194,7 +228,10 @@
         </p>
       </footer>
 
+    <script src="native.js"></script>
     <script src="config.js"></script>
+    <script src="reminders-store.js"></script>
     <script src="home.js"></script>
+    <script src="tabs.js"></script>
   </body>
 </html>

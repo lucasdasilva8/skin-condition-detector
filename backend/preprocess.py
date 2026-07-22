@@ -1,7 +1,7 @@
 from io import BytesIO
 from typing import Optional
 
-from PIL import Image
+from PIL import Image, ImageEnhance, ImageOps
 from torchvision import transforms
 
 IMAGE_SIZE = 224
@@ -27,6 +27,23 @@ def validate_upload(content_type: Optional[str], file_size: int) -> None:
         raise ValueError("Only JPEG and PNG images are supported.")
     if file_size > MAX_FILE_SIZE:
         raise ValueError("Image must be 10 MB or smaller.")
+
+
+def enhance_for_analysis(image_bytes: bytes) -> tuple[bytes, dict]:
+    """Mild auto-contrast + sharpen so the classifier sees a clearer photo."""
+    image = Image.open(BytesIO(image_bytes)).convert("RGB")
+    enhanced = ImageOps.autocontrast(image, cutoff=1)
+    enhanced = ImageEnhance.Sharpness(enhanced).enhance(1.15)
+    enhanced = ImageEnhance.Contrast(enhanced).enhance(1.08)
+
+    buffer = BytesIO()
+    enhanced.save(buffer, format="JPEG", quality=92)
+    meta = {
+        "applied": True,
+        "steps": ["autocontrast", "sharpen", "contrast"],
+        "note": "Mild enhancement applied before model analysis.",
+    }
+    return buffer.getvalue(), meta
 
 
 def preprocess_image(image_bytes: bytes):

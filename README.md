@@ -1,6 +1,6 @@
 # Skin Condition Detector
 
-Educational skin condition identification tool. Upload a photo of a skin area and get an AI-assisted identification with explanations, care guidance, and trusted sources.
+Educational skin condition identification tool. Upload a photo of a skin area and get an educational identification with explanations, care guidance, and trusted sources.
 
 **This is not a medical diagnosis. See a dermatologist for any concerning skin changes.**
 
@@ -29,21 +29,11 @@ Predictions combine up to **3 models** (ResNet18 + EfficientNet-B0 + MobileNetV3
 
 Train the extra backbones with `training/train_ensemble_backbones.ipynb`. Config lives in `models/ensemble.json`.
 
-## Optional: Ollama analysis chat (local)
+For measuring accuracy, retuning uncertainty, and retraining guidance, see **[MODELING.md](MODELING.md)**.
 
-When [Ollama](https://ollama.com) is running with a vision model, SkinScan automatically
-folds it into analysis (no checkbox) and unlocks a chat under the results:
+## iOS app
 
-```bash
-ollama pull qwen2.5vl:7b
-```
-
-- Mild image enhancement still runs before the ensemble
-- Vision notes help interpret the ensemble prediction (features, uncertainty, what to watch)
-- **Talk through this result** lets you ask follow-up questions about the photo and matches
-- Without Ollama, ensemble analysis still works; chat stays locked until Ollama is ready
-
-Env vars: `OLLAMA_BASE_URL`, `OLLAMA_MODEL`, `OLLAMA_TIMEOUT`
+See [APP.md](APP.md) to run SkinScan in the iOS Simulator via Capacitor + Xcode.
 
 ## Project structure
 

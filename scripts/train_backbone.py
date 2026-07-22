@@ -29,40 +29,49 @@ from torchvision import models, transforms
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "backend"))
 
-from condition_info import CLASS_CODES  # noqa: E402
+from condition_info import CLASS_CODES, FOLDER_TO_CODE  # noqa: E402
 from model_factory import SUPPORTED_BACKBONES  # noqa: E402
 
 CANONICAL_CODES = CLASS_CODES
-FOLDER_TO_CODE = {
-    "acne": "acne",
-    "actinic_keratosis": "actinic_keratosis",
-    "benign_tumors": "benign_tumors",
-    "bullous": "bullous",
-    "candidiasis": "candidiasis",
-    "drug_eruption": "drug_eruption",
-    "eczema": "eczema",
-    "infestations_bites": "infestations_bites",
-    "infestations": "infestations_bites",
-    "lichen": "lichen",
-    "lupus": "lupus",
-    "moles": "moles",
-    "psoriasis": "psoriasis",
-    "rosacea": "rosacea",
-    "seborrheic_keratoses": "seborrheic_keratoses",
-    "seborrh_keratoses": "seborrheic_keratoses",
-    "skin_cancer": "skin_cancer",
-    "sun_sunlight_damage": "sun_damage",
-    "sun_damage": "sun_damage",
-    "tinea": "tinea",
-    "unknown_normal": "normal",
-    "normal": "normal",
-    "vascular_tumors": "vascular_tumors",
-    "vasculitis": "vasculitis",
-    "vitiligo": "vitiligo",
-    "warts": "warts",
-}
 IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".bmp", ".webp"}
 SPLIT_FOLDERS = {"train", "test", "val", "validation", "training", "testing"}
+
+
+class RandomGaussianBlur:
+    """Phone-like mild blur (applied with probability p)."""
+
+    def __init__(self, p: float = 0.25, radius: tuple[float, float] = (0.1, 1.2)):
+        self.p = p
+        self.radius = radius
+
+    def __call__(self, image: Image.Image) -> Image.Image:
+        if torch.rand(1).item() > self.p:
+            return image
+        from PIL import ImageFilter
+
+        low, high = self.radius
+        r = float(torch.empty(1).uniform_(low, high).item())
+        return image.filter(ImageFilter.GaussianBlur(radius=r))
+
+
+class RandomJPEGCompression:
+    """Simulate phone / messaging JPEG artifacts."""
+
+    def __init__(self, p: float = 0.3, quality: tuple[int, int] = (40, 85)):
+        self.p = p
+        self.quality = quality
+
+    def __call__(self, image: Image.Image) -> Image.Image:
+        if torch.rand(1).item() > self.p:
+            return image
+        import io
+
+        low, high = self.quality
+        q = int(torch.randint(low, high + 1, (1,)).item())
+        buffer = io.BytesIO()
+        image.save(buffer, format="JPEG", quality=q)
+        buffer.seek(0)
+        return Image.open(buffer).convert("RGB")
 
 
 def normalize_folder(name: str) -> str:
@@ -239,12 +248,16 @@ def main() -> None:
     train_tf = transforms.Compose(
         [
             transforms.Resize((256, 256)),
-            transforms.RandomResizedCrop(224),
+            transforms.RandomResizedCrop(224, scale=(0.65, 1.0)),
             transforms.RandomHorizontalFlip(),
-            transforms.RandomRotation(15),
-            transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2),
+            transforms.RandomVerticalFlip(p=0.1),
+            transforms.RandomRotation(20),
+            transforms.ColorJitter(brightness=0.3, contrast=0.3, saturation=0.25, hue=0.02),
+            RandomGaussianBlur(p=0.25),
+            RandomJPEGCompression(p=0.3),
             transforms.ToTensor(),
             transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+            transforms.RandomErasing(p=0.15, scale=(0.02, 0.12)),
         ]
     )
     val_tf = transforms.Compose(

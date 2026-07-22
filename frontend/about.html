@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About — SkinScan</title>
+    <meta
+      name="description"
+      content="SkinScan was built at Brown University by Lucas da Silva as an educational skin condition screening tool."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">SkinScan</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="analyze.html" class="nav-link">Analyze</a>
+        <a href="history.html" class="nav-link">History</a>
+        <a href="reminders.html" class="nav-link">Habits</a>
+        <a href="blog.html" class="nav-link">Updates</a>
+        <a href="about.html" class="nav-link active">About</a>
+      </div>
+    </nav>
+
+    <header class="page-hero">
+      <div class="page-hero-inner">
+        <p class="page-hero-eyebrow">About</p>
+        <h1>Born at Brown</h1>
+        <p class="page-hero-lead">
+          An educational skin-condition tool — built to help people learn from a photo,
+          not to replace a dermatologist.
+        </p>
+      </div>
+    </header>
+
+    <main class="main-content about-page">
+      <section class="section">
+        <div class="about-narrative">
+          <p>
+            SkinScan started as a project to make dermatology-oriented machine learning
+            more understandable and accessible. Upload a close-up photo, get a ranked
+            educational match across 22 common conditions, and read plain-language
+            explanations with links to trusted medical sources.
+          </p>
+          <p>
+            It grew out of an earlier tool,
+            <a href="https://lucasdasilva8.github.io/melanoma-detector/" target="_blank" rel="noopener noreferrer">Melanoma Screen</a>,
+            which focuses on mole and lesion risk. SkinScan widens that idea: inflammatory
+            conditions, infections, pigment changes, and more — with an ensemble of models
+            and uncertainty cues when the prediction is not clear.
+          </p>
+          <p>
+            The models are trained on publicly available dermatology image datasets and
+            combine several neural networks so no single backbone has the last word.
+            Results are for learning and awareness only.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Who built this</h2>
+        <div class="about-narrative">
+          <p>
+            <strong>Lucas da Silva</strong> — Class of 2029 at
+            <strong>Brown University</strong>, with interests in neuroscience and applied
+            machine learning. SkinScan is a personal educational project, not an official
+            Brown product or medical service.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>What this is — and isn’t</h2>
+        <div class="disclaimer-box" role="note">
+          <strong>Not a medical diagnosis.</strong> SkinScan does not provide clinical advice,
+          prescribe treatment, or replace in-person care. If a finding worries you, changes,
+          or looks high-risk, see a dermatologist.
+        </div>
+        <div class="about-narrative" style="margin-top: 1.25rem">
+          <p>
+            Guidance text is adapted from established medical organizations (for example
+            AAD, Mayo Clinic, Harvard Health). We do not recommend specific products.
+          </p>
+        </div>
+        <p style="margin-top: 1.75rem">
+          <a href="analyze.html" class="btn btn-primary">Try Analyze →</a>
+          <a
+            href="https://lucasdasilva8.github.io/melanoma-detector/"
+            class="btn btn-ghost"
+            style="margin-left: 8px"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Melanoma Screen
+          </a>
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer footer-page">
+      <p>Educational project — not FDA-approved medical software.</p>
+      <p class="footer-related">Built by Lucas da Silva · Brown University</p>
+    </footer>
+
+    <script src="native.js"></script>
+    <script src="config.js"></script>
+    <script src="tabs.js"></script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+{
+  "name": "skin-condition-detector",
+  "version": "1.0.0",
+  "description": "Educational skin condition identification tool. Upload a photo of a skin area and get an AI-assisted identification with explanations, care guidance, and trusted sources.",
+  "main": "index.js",
+  "scripts": {
+    "build:native": "esbuild scripts/native-entry.js --bundle --outfile=frontend/native.js --format=iife --platform=browser",
+    "cap:sync": "npm run build:native && npx cap sync ios",
+    "cap:open": "npx cap open ios",
+    "cap:ios": "npm run cap:sync && npx cap open ios"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucasdasilva8/skin-condition-detector.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/lucasdasilva8/skin-condition-detector/issues"
+  },
+  "homepage": "https://github.com/lucasdasilva8/skin-condition-detector#readme",
+  "dependencies": {
+    "@capacitor/app": "^8.1.0",
+    "@capacitor/camera": "^8.2.1",
+    "@capacitor/core": "^8.4.1",
+    "@capacitor/ios": "^8.4.1",
+    "@capacitor/local-notifications": "^8.2.0",
+    "@capacitor/splash-screen": "^8.0.1",
+    "@capacitor/status-bar": "^8.0.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.4.1",
+    "esbuild": "^0.28.1"
+  }
+}

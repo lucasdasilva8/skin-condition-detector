@@ -1,0 +1,281 @@
+{
+  "data_dir": ".cache/kagglehub/datasets/pacificrm/skindiseasedataset/versions/6/SkinDisease/SkinDisease/test",
+  "models_dir": "/Users/lucasdasilva/Projects/skin-condition-detector/models",
+  "baseline": {
+    "n": 1546,
+    "top1": 0.9327296248382924,
+    "top3": 0.9902975420439845,
+    "uncertain_rate": 0.08473479948253558,
+    "overconfident_wrong_rate": 0.028460543337645538,
+    "high_risk_total": 246,
+    "high_risk_recall": 0.9390243902439024,
+    "high_risk_safe_rate": 0.9959349593495935,
+    "threshold": 0.5,
+    "margin": 0.12,
+    "weights": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "screening_score": 0.9063252663574501,
+    "top_confusions": [
+      {
+        "true": "drug_eruption",
+        "pred": "bullous",
+        "count": 9
+      },
+      {
+        "true": "drug_eruption",
+        "pred": "actinic_keratosis",
+        "count": 5
+      },
+      {
+        "true": "drug_eruption",
+        "pred": "lupus",
+        "count": 4
+      },
+      {
+        "true": "drug_eruption",
+        "pred": "vasculitis",
+        "count": 4
+      },
+      {
+        "true": "psoriasis",
+        "pred": "eczema",
+        "count": 4
+      },
+      {
+        "true": "tinea",
+        "pred": "candidiasis",
+        "count": 4
+      },
+      {
+        "true": "drug_eruption",
+        "pred": "tinea",
+        "count": 3
+      },
+      {
+        "true": "drug_eruption",
+        "pred": "normal",
+        "count": 3
+      },
+      {
+        "true": "drug_eruption",
+        "pred": "infestations_bites",
+        "count": 3
+      },
+      {
+        "true": "actinic_keratosis",
+        "pred": "sun_damage",
+        "count": 2
+      },
+      {
+        "true": "actinic_keratosis",
+        "pred": "bullous",
+        "count": 2
+      },
+      {
+        "true": "benign_tumors",
+        "pred": "moles",
+        "count": 2
+      },
+      {
+        "true": "benign_tumors",
+        "pred": "infestations_bites",
+        "count": 2
+      },
+      {
+        "true": "benign_tumors",
+        "pred": "skin_cancer",
+        "count": 2
+      },
+      {
+        "true": "benign_tumors",
+        "pred": "tinea",
+        "count": 2
+      },
+      {
+        "true": "drug_eruption",
+        "pred": "lichen",
+        "count": 2
+      },
+      {
+        "true": "drug_eruption",
+        "pred": "seborrheic_keratoses",
+        "count": 2
+      },
+      {
+        "true": "drug_eruption",
+        "pred": "psoriasis",
+        "count": 2
+      },
+      {
+        "true": "drug_eruption",
+        "pred": "vitiligo",
+        "count": 2
+      },
+      {
+        "true": "lichen",
+        "pred": "tinea",
+        "count": 2
+      }
+    ]
+  },
+  "tuned": {
+    "n": 1546,
+    "top1": 0.9540750323415266,
+    "top3": 0.9915912031047865,
+    "uncertain_rate": 0.11190168175937905,
+    "overconfident_wrong_rate": 0.012289780077619664,
+    "high_risk_total": 246,
+    "high_risk_recall": 0.9390243902439024,
+    "high_risk_safe_rate": 0.983739837398374,
+    "threshold": 0.5,
+    "margin": 0.1,
+    "weights": [
+      2.0,
+      1.0,
+      1.0
+    ],
+    "screening_score": 0.9188651016523103,
+    "top_confusions": [
+      {
+        "true": "skin_cancer",
+        "pred": "benign_tumors",
+        "count": 7
+      },
+      {
+        "true": "drug_eruption",
+        "pred": "infestations_bites",
+        "count": 3
+      },
+      {
+        "true": "drug_eruption",
+        "pred": "bullous",
+        "count": 3
+      },
+      {
+        "true": "eczema",
+        "pred": "psoriasis",
+        "count": 3
+      },
+      {
+        "true": "actinic_keratosis",
+        "pred": "bullous",
+        "count": 2
+      },
+      {
+        "true": "benign_tumors",
+        "pred": "infestations_bites",
+        "count": 2
+      },
+      {
+        "true": "drug_eruption",
+        "pred": "vasculitis",
+        "count": 2
+      },
+      {
+        "true": "drug_eruption",
+        "pred": "lupus",
+        "count": 2
+      },
+      {
+        "true": "lichen",
+        "pred": "tinea",
+        "count": 2
+      },
+      {
+        "true": "psoriasis",
+        "pred": "eczema",
+        "count": 2
+      },
+      {
+        "true": "psoriasis",
+        "pred": "tinea",
+        "count": 2
+      },
+      {
+        "true": "vascular_tumors",
+        "pred": "benign_tumors",
+        "count": 2
+      },
+      {
+        "true": "warts",
+        "pred": "benign_tumors",
+        "count": 2
+      },
+      {
+        "true": "acne",
+        "pred": "infestations_bites",
+        "count": 1
+      },
+      {
+        "true": "acne",
+        "pred": "lichen",
+        "count": 1
+      },
+      {
+        "true": "acne",
+        "pred": "moles",
+        "count": 1
+      },
+      {
+        "true": "acne",
+        "pred": "eczema",
+        "count": 1
+      },
+      {
+        "true": "actinic_keratosis",
+        "pred": "sun_damage",
+        "count": 1
+      },
+      {
+        "true": "actinic_keratosis",
+        "pred": "skin_cancer",
+        "count": 1
+      },
+      {
+        "true": "benign_tumors",
+        "pred": "vascular_tumors",
+        "count": 1
+      }
+    ]
+  },
+  "applied": {
+    "uncertain_threshold": 0.5,
+    "close_margin": 0.1,
+    "weights": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "rationale": "Kept balanced member weights. The overall best ([2.0, 1.0, 1.0]) improves top-1 and overconfident-wrong but drops high-risk safe rate and increases skin_cancer\u2192benign_tumors confusions on this same test set.",
+    "metrics_vs_baseline": {
+      "top1": 0.9327296248382924,
+      "top3": 0.9902975420439845,
+      "uncertain_rate": 0.08473479948253558,
+      "overconfident_wrong_rate": 0.028460543337645538,
+      "high_risk_safe_rate": 0.9959349593495935,
+      "screening_score": 0.9063252663574501,
+      "note": "Applied config matches threshold/margin-only best; same screening score as pre-tune baseline aside from close_margin 0.12\u21920.10"
+    },
+    "rejected_aggressive_tune": {
+      "weights": [
+        2.0,
+        1.0,
+        1.0
+      ],
+      "threshold": 0.5,
+      "margin": 0.1,
+      "top1": 0.9540750323415266,
+      "overconfident_wrong_rate": 0.012289780077619664,
+      "high_risk_safe_rate": 0.983739837398374,
+      "screening_score": 0.9188651016523103
+    },
+    "key_class_recalls_after_retrain": {
+      "skin_cancer": 0.974,
+      "drug_eruption": 0.279,
+      "note": "skin_cancer recovered after folder-map fix + retrain; drug_eruption still weak"
+    }
+  }
+}

@@ -3,6 +3,7 @@ __pycache__/
 *.egg-info/
 .venv/
 venv/
+.cache/
 .env
 .DS_Store
 *.pth
@@ -12,3 +13,12 @@ venv/
 !models/.gitkeep
 .ipynb_checkpoints/
 *.log
+node_modules/
+dist/
+.idea/
+*.xcuserstate
+ios/App/Pods/
+ios/App/Podfile.lock
+ios/DerivedData/
+frontend/config.local.js
+package-lock.json.bak

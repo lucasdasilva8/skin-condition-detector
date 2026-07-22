@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>History — SkinScan</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">SkinScan</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="analyze.html" class="nav-link">Analyze</a>
+        <a href="history.html" class="nav-link active">History</a>
+        <a href="reminders.html" class="nav-link">Habits</a>
+        <a href="blog.html" class="nav-link">Updates</a>
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+    </nav>
+
+    <header class="page-hero">
+      <div class="page-hero-inner">
+        <h1>Scan history</h1>
+        <p class="page-hero-lead">
+          Past educational results saved on this device — so you can revisit matches over time.
+        </p>
+        <div class="page-hero-actions">
+          <a href="analyze.html" class="btn btn-primary">Analyze a photo</a>
+          <button type="button" id="history-clear-btn" class="btn btn-ghost hidden">Clear all</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content history-page">
+      <p id="history-empty" class="history-empty">
+        No scans yet. After you analyze a photo, it will show up here automatically.
+        <a href="analyze.html">Go to Analyze →</a>
+      </p>
+
+      <ul id="history-list" class="history-list" aria-label="Saved scans"></ul>
+      <div id="history-detail" class="history-detail hidden" aria-live="polite"></div>
+
+      <p class="section-note muted">
+        History stays on your phone or browser only. SkinScan does not upload past scans to a server for storage.
+      </p>
+    </main>
+
+    <footer class="footer footer-page">
+      <p>Educational project — not FDA-approved medical software.</p>
+    </footer>
+
+    <script src="native.js"></script>
+    <script src="config.js"></script>
+    <script src="history-store.js"></script>
+    <script src="history.js"></script>
+    <script src="tabs.js"></script>
+  </body>
+</html>

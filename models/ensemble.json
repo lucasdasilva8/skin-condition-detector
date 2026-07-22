@@ -16,6 +16,6 @@
       "weight": 1.0
     }
   ],
-  "uncertain_threshold": 0.35,
-  "close_margin": 0.08
+  "uncertain_threshold": 0.5,
+  "close_margin": 0.1
 }
