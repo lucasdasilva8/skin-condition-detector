@@ -375,8 +375,9 @@ body.is-web .bottom-tabs [data-tab="habits"] {
   }
 
   .analyze-page {
-    max-width: 1100px;
-    padding: 40px 40px 80px;
+    max-width: none;
+    width: 100%;
+    padding: 40px clamp(24px, 4vw, 56px) 80px;
   }
 
   .analyze-hero {
@@ -405,32 +406,35 @@ body.is-web .bottom-tabs [data-tab="habits"] {
     padding-bottom: 4px;
   }
 
+  /* Upload far left, tips far right — side by side with space between */
   .analyze-page > main.analyze-setup {
-    display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
-    gap: 28px 36px;
-    align-items: start;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: clamp(32px, 6vw, 80px);
   }
 
   .analyze-page .upload-section {
-    grid-column: 1;
-    grid-row: 1;
+    flex: 0 1 540px;
+    width: min(100%, 540px);
+    margin: 0;
   }
 
   .analyze-page .photo-guide {
-    grid-column: 2;
-    grid-row: 1;
+    flex: 0 1 420px;
+    width: min(100%, 420px);
+    margin: 0 0 0 auto;
     position: sticky;
     top: 88px;
-    margin-bottom: 0;
   }
 
   .analyze-page .results {
-    grid-column: 1 / -1;
+    flex: 1 1 100%;
+    width: 100%;
   }
 
   .analyze-page .dropzone {
-    min-height: 320px;
+    min-height: 340px;
     padding: 64px 32px;
   }
 
@@ -440,14 +444,16 @@ body.is-web .bottom-tabs [data-tab="habits"] {
     gap: 10px;
   }
 
-  /* After analysis: give results the full page width */
+  /* After analysis: preview left, results fill the rest */
   .analyze-page.has-results {
-    max-width: 1180px;
+    max-width: none;
   }
 
   .analyze-page.has-results > main.analyze-setup {
+    display: grid;
     grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
-    gap: 28px 32px;
+    gap: 28px 40px;
+    justify-content: stretch;
   }
 
   .analyze-page.has-results .photo-guide {
@@ -455,15 +461,15 @@ body.is-web .bottom-tabs [data-tab="habits"] {
   }
 
   .analyze-page.has-results .upload-section {
-    grid-column: 1;
-    grid-row: 1;
+    width: auto;
+    flex: none;
     position: sticky;
     top: 88px;
+    margin: 0;
   }
 
   .analyze-page.has-results .results {
-    grid-column: 2;
-    grid-row: 1;
+    width: auto;
   }
 
   .analyze-page.has-results .dropzone {
