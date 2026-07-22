@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SkinScan — Educational Skin Condition Identifier</title>
-    <link rel="stylesheet" href="style.css" />
+    <script>
+      (function () {
+        document.documentElement.classList.add("is-web");
+      })();
+    </script>
+    <link rel="stylesheet" href="style.css?v=20260722c" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,7 +24,6 @@
         <a href="index.html" class="nav-link active">Home</a>
         <a href="analyze.html" class="nav-link">Analyze</a>
         <a href="history.html" class="nav-link">History</a>
-        <a href="reminders.html" class="nav-link app-only">Habits</a>
         <a href="blog.html" class="nav-link">Updates</a>
         <a href="about.html" class="nav-link">About</a>
       </div>
@@ -91,15 +95,6 @@
           <a href="analyze.html" class="btn btn-secondary">Go to analyzer</a>
           <a href="history.html" class="btn btn-ghost" style="margin-left: 12px">Past scans</a>
           <a href="blog.html" class="btn btn-ghost" style="margin-left: 12px">Skin care updates →</a>
-        </section>
-
-        <section class="section habits-home-section app-only">
-          <div class="habits-home-header">
-            <h2>Today’s habits</h2>
-            <a href="reminders.html" class="btn btn-ghost">Open Habits →</a>
-          </div>
-          <p id="home-habits-progress" class="section-lead">Loading today’s checklist…</p>
-          <div id="home-habits-list" class="habit-today-groups"></div>
         </section>
 
         <section class="section">
@@ -235,10 +230,10 @@
       </p>
     </footer>
 
-    <script src="native.js"></script>
-    <script src="config.js"></script>
-    <script src="reminders-store.js"></script>
-    <script src="home.js"></script>
-    <script src="tabs.js"></script>
+    <script src="native.js?v=20260722c"></script>
+    <script src="config.js?v=20260722c"></script>
+    <script src="reminders-store.js?v=20260722c"></script>
+    <script src="home.js?v=20260722c"></script>
+    <script src="tabs.js?v=20260722c"></script>
   </body>
 </html>

@@ -137,20 +137,34 @@ a {
 }
 
 /* Habits and other app-only UI — hidden on the public website */
+html.is-web .app-only,
+body.is-web .app-only,
 body:not(.is-native) .app-only {
   display: none !important;
 }
 
+/* Never show a Habits bottom tab on the public website */
+html.is-web .bottom-tabs [data-tab="habits"],
+body.is-web .bottom-tabs [data-tab="habits"] {
+  display: none !important;
+}
+
 /* Wide desktop: top links; hide bottom tabs on large screens */
-@media (min-width: 900px) {
+@media (min-width: 768px) {
+  html.is-web .bottom-tabs,
+  body.is-web .bottom-tabs,
   body:not(.is-native) .bottom-tabs {
     display: none;
   }
 
+  html.is-web.app-shell,
+  body.is-web.app-shell,
   body:not(.is-native).app-shell {
     padding-bottom: 0;
   }
+}
 
+@media (min-width: 900px) {
   .nav {
     padding: 16px 32px;
   }
@@ -267,15 +281,15 @@ body:not(.is-native) .app-only {
   display: none;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 768px) {
   .hero {
     padding: 80px 40px 88px;
   }
 
   .hero-inner-wide {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 280px;
-    gap: 48px;
+    grid-template-columns: minmax(0, 1.4fr) minmax(220px, 280px);
+    gap: 40px;
     align-items: end;
   }
 
@@ -329,10 +343,10 @@ body:not(.is-native) .app-only {
   }
 
   .home-layout {
-    max-width: 1100px;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 340px;
-    gap: 48px;
+    max-width: 1100px !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 340px);
+    gap: 40px;
     align-items: start;
     padding-top: 64px;
   }
@@ -367,7 +381,7 @@ body:not(.is-native) .app-only {
 
   .analyze-page > main {
     display: grid;
-    grid-template-columns: 320px minmax(0, 1fr);
+    grid-template-columns: minmax(240px, 320px) minmax(0, 1fr);
     gap: 28px 40px;
     align-items: start;
   }

@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Analyze — SkinScan</title>
-    <link rel="stylesheet" href="style.css" />
+    <script>
+      (function () {
+        document.documentElement.classList.add("is-web");
+      })();
+    </script>
+    <link rel="stylesheet" href="style.css?v=20260722c" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,7 +24,6 @@
         <a href="index.html" class="nav-link">Home</a>
         <a href="analyze.html" class="nav-link active">Analyze</a>
         <a href="history.html" class="nav-link">History</a>
-        <a href="reminders.html" class="nav-link app-only">Habits</a>
         <a href="blog.html" class="nav-link">Updates</a>
         <a href="about.html" class="nav-link">About</a>
       </div>
@@ -132,21 +136,6 @@
             <div id="alternatives-list" class="alternatives-list"></div>
           </div>
 
-          <div id="habit-suggest" class="habit-suggest hidden app-only" aria-live="polite">
-            <h3>Habits that may help</h3>
-            <p class="habit-suggest-lead">
-              Soft suggestions based on this educational result — turn on routines you already track in Habits. Not product advice.
-            </p>
-            <ul id="habit-suggest-list" class="habit-suggest-list"></ul>
-            <div class="habit-suggest-actions">
-              <button type="button" id="habit-suggest-add" class="btn btn-secondary">
-                Add suggested habits
-              </button>
-              <a href="reminders.html" class="btn btn-ghost">Open Habits</a>
-            </div>
-            <p id="habit-suggest-status" class="habit-suggest-status muted" aria-live="polite"></p>
-          </div>
-
           <div class="result-block">
             <h3>Explanation</h3>
             <p id="explanation" class="body-text"></p>
@@ -202,12 +191,12 @@
       </footer>
     </div>
 
-    <script src="native.js"></script>
-    <script src="config.js"></script>
-    <script src="history-store.js"></script>
-    <script src="reminders-store.js"></script>
-    <script src="habit-suggestions.js"></script>
-    <script src="app.js"></script>
-    <script src="tabs.js"></script>
+    <script src="native.js?v=20260722c"></script>
+    <script src="config.js?v=20260722c"></script>
+    <script src="history-store.js?v=20260722c"></script>
+    <script src="reminders-store.js?v=20260722c"></script>
+    <script src="habit-suggestions.js?v=20260722c"></script>
+    <script src="app.js?v=20260722c"></script>
+    <script src="tabs.js?v=20260722c"></script>
   </body>
 </html>

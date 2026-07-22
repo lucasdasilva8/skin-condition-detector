@@ -24,6 +24,12 @@ const CONDITION_SHORT_NAMES = [
   "Warts",
 ];
 
+function isNativeApp() {
+  return Boolean(
+    window.APP_CONFIG?.IS_NATIVE || window.Capacitor?.isNativePlatform?.()
+  );
+}
+
 function renderConditionsGrid(names = CONDITION_SHORT_NAMES) {
   const grid = document.getElementById("conditions-grid");
   if (!grid) return;
@@ -70,14 +76,36 @@ function habitHomeItem(habit, state, store) {
   `;
 }
 
-function isNativeApp() {
-  return Boolean(
-    window.APP_CONFIG?.IS_NATIVE || window.Capacitor?.isNativePlatform?.()
-  );
+function ensureHabitsHomeSection() {
+  if (document.getElementById("home-habits-list")) return true;
+  const mainCol = document.querySelector(".home-main");
+  if (!mainCol) return false;
+  const anchor = mainCol.querySelector(".section");
+  const section = document.createElement("section");
+  section.className = "section habits-home-section";
+  section.innerHTML = `
+    <div class="habits-home-header">
+      <h2>Today’s habits</h2>
+      <a href="reminders.html" class="btn btn-ghost">Open Habits →</a>
+    </div>
+    <p id="home-habits-progress" class="section-lead">Loading today’s checklist…</p>
+    <div id="home-habits-list" class="habit-today-groups"></div>
+  `;
+  // Place after "How to use it" (second section) when possible
+  const sections = mainCol.querySelectorAll(".section");
+  if (sections.length >= 2) {
+    sections[1].after(section);
+  } else if (anchor) {
+    anchor.after(section);
+  } else {
+    mainCol.prepend(section);
+  }
+  return true;
 }
 
 function renderHomeHabits() {
   if (!isNativeApp()) return;
+  if (!ensureHabitsHomeSection()) return;
   const store = window.SkinScanHabits;
   const listEl = document.getElementById("home-habits-list");
   const progressEl = document.getElementById("home-habits-progress");
@@ -116,10 +144,11 @@ function renderHomeHabits() {
   listEl.innerHTML = block("Morning", morning) + block("Afternoon", afternoon);
 }
 
-document.getElementById("home-habits-list")?.addEventListener("change", (event) => {
+document.addEventListener("change", (event) => {
   const input = event.target;
   const store = window.SkinScanHabits;
   if (!(input instanceof HTMLInputElement) || !input.dataset.habitId || !store) return;
+  if (!document.getElementById("home-habits-list")?.contains(input)) return;
   store.setChecked(input.dataset.habitId, input.checked);
   renderHomeHabits();
 });
