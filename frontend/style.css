@@ -376,27 +376,68 @@ body.is-web .bottom-tabs [data-tab="habits"] {
 
   .analyze-page {
     max-width: 1100px;
-    padding: 48px 40px 80px;
+    padding: 40px 40px 80px;
   }
 
-  .analyze-page > main {
+  .analyze-hero {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 36px;
+    padding-bottom: 28px;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .analyze-hero h1 {
+    font-size: clamp(1.9rem, 3vw, 2.35rem);
+    margin-bottom: 10px;
+  }
+
+  .analyze-hero .page-lead {
+    max-width: 36rem;
+    margin-bottom: 0;
+  }
+
+  .analyze-hero-meta {
+    flex-shrink: 0;
+    text-align: right;
+    padding-bottom: 4px;
+  }
+
+  .analyze-page > main.analyze-setup {
     display: grid;
-    grid-template-columns: minmax(240px, 320px) minmax(0, 1fr);
-    gap: 28px 40px;
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+    gap: 28px 36px;
     align-items: start;
   }
 
-  .analyze-page .photo-guide {
+  .analyze-page .upload-section {
     grid-column: 1;
-    grid-row: 1 / span 3;
+    grid-row: 1;
+  }
+
+  .analyze-page .photo-guide {
+    grid-column: 2;
+    grid-row: 1;
     position: sticky;
     top: 88px;
     margin-bottom: 0;
   }
 
-  .analyze-page .upload-section,
   .analyze-page .results {
-    grid-column: 2;
+    grid-column: 1 / -1;
+  }
+
+  .analyze-page .dropzone {
+    min-height: 320px;
+    padding: 64px 32px;
+  }
+
+  .photo-checklist {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 
   /* After analysis: give results the full page width */
@@ -404,8 +445,8 @@ body.is-web .bottom-tabs [data-tab="habits"] {
     max-width: 1180px;
   }
 
-  .analyze-page.has-results > main {
-    grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
+  .analyze-page.has-results > main.analyze-setup {
+    grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
     gap: 28px 32px;
   }
 
@@ -427,6 +468,12 @@ body.is-web .bottom-tabs [data-tab="habits"] {
 
   .analyze-page.has-results .dropzone {
     min-height: 160px;
+    padding: 20px;
+  }
+
+  .analyze-page.has-results .analyze-hero {
+    margin-bottom: 24px;
+    padding-bottom: 18px;
   }
 }
 
@@ -894,9 +941,63 @@ body.is-web .bottom-tabs [data-tab="habits"] {
 
 /* Analyze page */
 .analyze-page {
-  max-width: 640px;
+  max-width: 720px;
   margin: 0 auto;
-  padding: 40px 32px 64px;
+  padding: 32px 24px 64px;
+}
+
+.analyze-hero {
+  margin-bottom: 28px;
+}
+
+.analyze-hero-eyebrow,
+.photo-guide-kicker,
+.dropzone-kicker {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 8px;
+}
+
+.analyze-hero h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 4vw, 2.15rem);
+  font-weight: 700;
+  color: var(--green-dark);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.analyze-hero .page-lead {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.analyze-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 18px;
+}
+
+.analyze-hero-link {
+  font-weight: 700;
+  color: var(--green-dark);
+  text-decoration: none;
+}
+
+.analyze-hero-link:hover {
+  text-decoration: underline;
+}
+
+.analyze-hero-note {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-muted);
 }
 
 .page-header {
@@ -922,41 +1023,55 @@ body.is-web .bottom-tabs [data-tab="habits"] {
   margin-bottom: 24px;
 }
 
+.upload-toolbar {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .dropzone {
   background: var(--white);
   border: 2px dashed var(--green);
   border-radius: var(--radius);
-  padding: 56px 24px;
+  padding: 48px 24px;
   text-align: center;
   cursor: pointer;
-  transition: border-color 0.15s, background 0.15s;
-  min-height: 200px;
+  transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+  min-height: 240px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: var(--shadow);
 }
 
 .dropzone:hover,
 .dropzone:focus {
   background: var(--cream-dark);
   outline: none;
+  border-color: var(--green-dark);
 }
 
 .dropzone.dragover {
   border-color: var(--green-dark);
   background: #e8f5e9;
+  box-shadow: 0 0 0 4px rgba(45, 106, 79, 0.12);
+}
+
+.dropzone-kicker {
+  margin-bottom: 10px;
 }
 
 .dropzone-label {
   font-family: var(--font-heading);
-  font-size: 1.0625rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--green-dark);
 }
 
 .dropzone-hint {
-  margin-top: 6px;
-  font-size: 0.875rem;
+  margin-top: 8px;
+  font-size: 0.9375rem;
   font-weight: 600;
   color: var(--text-muted);
 }
