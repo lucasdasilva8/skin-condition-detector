@@ -406,35 +406,40 @@ body.is-web .bottom-tabs [data-tab="habits"] {
     padding-bottom: 4px;
   }
 
-  /* Upload far left, tips far right — side by side with space between */
+  /* Upload far left, tips far right — side by side across the full page */
   .analyze-page > main.analyze-setup {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: clamp(32px, 6vw, 80px);
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(24px, 5vw, 64px);
+    align-items: start;
+    width: 100%;
   }
 
   .analyze-page .upload-section {
-    flex: 0 1 540px;
-    width: min(100%, 540px);
+    grid-column: 1;
+    width: 100%;
+    max-width: none;
     margin: 0;
+    flex: none;
   }
 
   .analyze-page .photo-guide {
-    flex: 0 1 420px;
-    width: min(100%, 420px);
-    margin: 0 0 0 auto;
+    grid-column: 2;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    flex: none;
     position: sticky;
     top: 88px;
   }
 
   .analyze-page .results {
-    flex: 1 1 100%;
+    grid-column: 1 / -1;
     width: 100%;
   }
 
   .analyze-page .dropzone {
-    min-height: 340px;
+    min-height: 360px;
     padding: 64px 32px;
   }
 
@@ -450,10 +455,9 @@ body.is-web .bottom-tabs [data-tab="habits"] {
   }
 
   .analyze-page.has-results > main.analyze-setup {
-    display: grid;
+    display: grid !important;
     grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
     gap: 28px 40px;
-    justify-content: stretch;
   }
 
   .analyze-page.has-results .photo-guide {
@@ -461,15 +465,14 @@ body.is-web .bottom-tabs [data-tab="habits"] {
   }
 
   .analyze-page.has-results .upload-section {
-    width: auto;
-    flex: none;
+    grid-column: 1;
     position: sticky;
     top: 88px;
     margin: 0;
   }
 
   .analyze-page.has-results .results {
-    width: auto;
+    grid-column: 2;
   }
 
   .analyze-page.has-results .dropzone {
@@ -947,9 +950,25 @@ body.is-web .bottom-tabs [data-tab="habits"] {
 
 /* Analyze page */
 .analyze-page {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 32px 24px 64px;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 32px clamp(16px, 4vw, 56px) 64px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
+  .analyze-page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 24px 64px;
+  }
+
+  .analyze-page > main.analyze-setup {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 }
 
 .analyze-hero {
