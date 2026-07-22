@@ -9,7 +9,7 @@
         document.documentElement.classList.add("is-web");
       })();
     </script>
-    <link rel="stylesheet" href="style.css?v=20260722c" />
+    <link rel="stylesheet" href="style.css?v=20260722e" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -118,46 +118,54 @@
         </section>
 
         <section id="results" class="results hidden" aria-live="polite">
-          <div class="result-header">
-            <span id="risk-badge" class="risk-badge"></span>
-            <span id="confidence-value" class="confidence-pill"></span>
+          <div class="result-summary">
+            <div class="result-header">
+              <span id="risk-badge" class="risk-badge"></span>
+              <span id="confidence-value" class="confidence-pill"></span>
+            </div>
+
+            <p id="ensemble-note" class="ensemble-note hidden" aria-live="polite"></p>
+
+            <h2 id="condition-name" class="condition-name"></h2>
+            <p id="condition-description" class="condition-lead"></p>
           </div>
 
-          <p id="ensemble-note" class="ensemble-note hidden" aria-live="polite"></p>
+          <div class="result-grid">
+            <div class="result-col">
+              <div class="result-block">
+                <h3>Explanation</h3>
+                <p id="explanation" class="body-text"></p>
+              </div>
 
-          <h2 id="condition-name" class="condition-name"></h2>
-          <p id="condition-description" class="condition-lead"></p>
+              <div class="result-block">
+                <h3>Common signs</h3>
+                <ul id="common-signs" class="signs-list"></ul>
+              </div>
+            </div>
 
-          <div id="alternatives" class="alternatives alternatives-early hidden">
-            <h3>Other possible matches</h3>
-            <p class="alternatives-intro">
-              This is a ranking, not a diagnosis. These conditions can look similar — consider them before reading the details below.
-            </p>
-            <div id="alternatives-list" class="alternatives-list"></div>
+            <div class="result-col">
+              <div id="alternatives" class="alternatives alternatives-early hidden">
+                <h3>Other possible matches</h3>
+                <p class="alternatives-intro">
+                  This is a ranking, not a diagnosis. These conditions can look similar — consider them before reading the details.
+                </p>
+                <div id="alternatives-list" class="alternatives-list"></div>
+              </div>
+
+              <div class="result-block">
+                <h3>When to see a doctor</h3>
+                <p id="when-to-see-doctor" class="body-text"></p>
+              </div>
+            </div>
           </div>
 
-          <div class="result-block">
-            <h3>Explanation</h3>
-            <p id="explanation" class="body-text"></p>
-          </div>
-
-          <div class="result-block">
-            <h3>Common signs</h3>
-            <ul id="common-signs" class="signs-list"></ul>
-          </div>
-
-          <div class="result-block">
-            <h3>When to see a doctor</h3>
-            <p id="when-to-see-doctor" class="body-text"></p>
-          </div>
-
-          <div class="result-block">
+          <div class="result-block result-block-wide">
             <h3>What dermatologists recommend</h3>
             <p class="actions-intro">General care guidance — not specific product recommendations.</p>
             <ul id="recommended-actions" class="actions-list"></ul>
           </div>
 
-          <div class="result-block">
+          <div class="result-block result-block-wide">
             <h3>Learn more</h3>
             <p class="sources-intro">Trusted resources from medical organizations:</p>
             <ul id="sources-list" class="sources-list"></ul>
@@ -191,12 +199,12 @@
       </footer>
     </div>
 
-    <script src="native.js?v=20260722c"></script>
-    <script src="config.js?v=20260722c"></script>
-    <script src="history-store.js?v=20260722c"></script>
-    <script src="reminders-store.js?v=20260722c"></script>
-    <script src="habit-suggestions.js?v=20260722c"></script>
-    <script src="app.js?v=20260722c"></script>
-    <script src="tabs.js?v=20260722c"></script>
+    <script src="native.js?v=20260722e"></script>
+    <script src="config.js?v=20260722e"></script>
+    <script src="history-store.js?v=20260722e"></script>
+    <script src="reminders-store.js?v=20260722e"></script>
+    <script src="habit-suggestions.js?v=20260722e"></script>
+    <script src="app.js?v=20260722e"></script>
+    <script src="tabs.js?v=20260722e"></script>
   </body>
 </html>

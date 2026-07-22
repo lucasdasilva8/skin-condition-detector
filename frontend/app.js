@@ -14,6 +14,7 @@ if (document.getElementById("dropzone")) {
   const clearBtn = document.getElementById("clear-btn");
   const statusEl = document.getElementById("status");
   const resultsSection = document.getElementById("results");
+  const analyzePage = document.querySelector(".analyze-page");
   const riskBadge = document.getElementById("risk-badge");
   const conditionName = document.getElementById("condition-name");
   const conditionDescription = document.getElementById("condition-description");
@@ -45,6 +46,11 @@ if (document.getElementById("dropzone")) {
   let latestAnalysis = null;
   let imageDataUrl = null;
   let pendingHabitIds = [];
+
+  function setResultsVisible(visible) {
+    resultsSection.classList.toggle("hidden", !visible);
+    analyzePage?.classList.toggle("has-results", visible);
+  }
 
   function setStatus(message, isError = false) {
     statusEl.textContent = message;
@@ -186,7 +192,7 @@ if (document.getElementById("dropzone")) {
     preview.classList.remove("hidden");
     dropzone.classList.add("has-preview");
     clearBtn.classList.remove("hidden");
-    resultsSection.classList.add("hidden");
+    setResultsVisible(false);
     habitSuggest?.classList.add("hidden");
     latestAnalysis = null;
     imageDataUrl = null;
@@ -240,7 +246,7 @@ if (document.getElementById("dropzone")) {
     dropzone.classList.remove("has-preview");
     analyzeBtn.disabled = true;
     clearBtn.classList.add("hidden");
-    resultsSection.classList.add("hidden");
+    setResultsVisible(false);
     habitSuggest?.classList.add("hidden");
     latestAnalysis = null;
     imageDataUrl = null;
@@ -499,6 +505,6 @@ if (document.getElementById("dropzone")) {
     }
 
     renderHabitSuggestions(data);
-    resultsSection.classList.remove("hidden");
+    setResultsVisible(true);
   }
 }
