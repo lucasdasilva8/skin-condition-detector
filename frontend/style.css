@@ -1353,8 +1353,22 @@ body.is-web .bottom-tabs [data-tab="habits"] {
   font-weight: 600;
   color: var(--text-secondary);
   line-height: 1.55;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   max-width: 46rem;
+}
+
+.sample-warning {
+  margin: 0 0 16px;
+  padding: 10px 12px;
+  max-width: 46rem;
+  border: 1px solid rgba(146, 64, 14, 0.28);
+  border-left: 3px solid #b45309;
+  border-radius: var(--radius-sm);
+  background: #fffbeb;
+  color: #78350f;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.5;
 }
 
 .sample-picker-label {

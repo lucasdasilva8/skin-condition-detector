@@ -9,7 +9,7 @@
         document.documentElement.classList.add("is-web");
       })();
     </script>
-    <link rel="stylesheet" href="style.css?v=20260722l" />
+    <link rel="stylesheet" href="style.css?v=20260722m" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -133,9 +133,17 @@
               Choose a condition name to load a demo image into the analyzer, then press
               <strong>Analyze photo</strong>. Samples avoid faces where possible and come from the demo dataset.
             </p>
+            <p id="sample-warning" class="sample-warning" role="note">
+              <strong>Content warning:</strong> Sample photos show real skin conditions and may be
+              unsettling for some people.
+            </p>
           </div>
           <label class="sample-picker-label" for="sample-select">Condition</label>
-          <select id="sample-select" class="sample-select" aria-describedby="sample-attribution">
+          <select
+            id="sample-select"
+            class="sample-select"
+            aria-describedby="sample-warning sample-attribution"
+          >
             <option value="">Select a condition…</option>
           </select>
           <p id="sample-attribution" class="sample-attribution muted">
@@ -227,12 +235,12 @@
       </footer>
     </div>
 
-    <script src="native.js?v=20260722l"></script>
-    <script src="config.js?v=20260722l"></script>
-    <script src="history-store.js?v=20260722l"></script>
-    <script src="reminders-store.js?v=20260722l"></script>
-    <script src="habit-suggestions.js?v=20260722l"></script>
-    <script src="app.js?v=20260722l"></script>
-    <script src="tabs.js?v=20260722l"></script>
+    <script src="native.js?v=20260722m"></script>
+    <script src="config.js?v=20260722m"></script>
+    <script src="history-store.js?v=20260722m"></script>
+    <script src="reminders-store.js?v=20260722m"></script>
+    <script src="habit-suggestions.js?v=20260722m"></script>
+    <script src="app.js?v=20260722m"></script>
+    <script src="tabs.js?v=20260722m"></script>
   </body>
 </html>
