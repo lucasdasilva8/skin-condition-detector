@@ -9,7 +9,7 @@
         document.documentElement.classList.add("is-web");
       })();
     </script>
-    <link rel="stylesheet" href="style.css?v=20260722j" />
+    <link rel="stylesheet" href="style.css?v=20260722k" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -126,18 +126,19 @@
           </div>
         </aside>
 
-        <section class="sample-gallery" aria-labelledby="sample-gallery-title">
-          <div class="sample-gallery-header">
-            <h2 id="sample-gallery-title">Try a sample photo</h2>
-            <p class="sample-gallery-lead">
-              Click a condition to load a demo image, then press <strong>Analyze photo</strong>.
-              Labels are from the demo dataset — see how the ensemble ranks them.
+        <section class="sample-picker" aria-labelledby="sample-picker-title">
+          <div class="sample-picker-header">
+            <h2 id="sample-picker-title">Try a sample photo</h2>
+            <p class="sample-picker-lead">
+              Choose a condition name to load a demo image into the analyzer, then press
+              <strong>Analyze photo</strong>. Samples avoid faces where possible and come from the demo dataset.
             </p>
           </div>
-          <div id="sample-grid" class="sample-grid" aria-live="polite">
-            <p class="muted">Loading samples…</p>
-          </div>
-          <p class="sample-attribution muted">
+          <label class="sample-picker-label" for="sample-select">Condition</label>
+          <select id="sample-select" class="sample-select" aria-describedby="sample-attribution">
+            <option value="">Select a condition…</option>
+          </select>
+          <p id="sample-attribution" class="sample-attribution muted">
             Demo images adapted from the
             <a href="https://www.kaggle.com/datasets/pacificrm/skindiseasedataset" target="_blank" rel="noopener noreferrer">PacificRM Skin Disease Dataset</a>
             for educational experimentation only.
@@ -226,12 +227,12 @@
       </footer>
     </div>
 
-    <script src="native.js?v=20260722j"></script>
-    <script src="config.js?v=20260722j"></script>
-    <script src="history-store.js?v=20260722j"></script>
-    <script src="reminders-store.js?v=20260722j"></script>
-    <script src="habit-suggestions.js?v=20260722j"></script>
-    <script src="app.js?v=20260722j"></script>
-    <script src="tabs.js?v=20260722j"></script>
+    <script src="native.js?v=20260722k"></script>
+    <script src="config.js?v=20260722k"></script>
+    <script src="history-store.js?v=20260722k"></script>
+    <script src="reminders-store.js?v=20260722k"></script>
+    <script src="habit-suggestions.js?v=20260722k"></script>
+    <script src="app.js?v=20260722k"></script>
+    <script src="tabs.js?v=20260722k"></script>
   </body>
 </html>

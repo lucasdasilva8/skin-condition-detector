@@ -2,133 +2,111 @@
   {
     "code": "acne",
     "label": "Acne",
-    "file": "acne.jpg",
-    "bytes": 15424
+    "file": "acne.jpg"
   },
   {
     "code": "actinic_keratosis",
     "label": "Actinic Keratosis",
-    "file": "actinic_keratosis.jpg",
-    "bytes": 7783
+    "file": "actinic_keratosis.jpg"
   },
   {
     "code": "benign_tumors",
     "label": "Benign Tumor",
-    "file": "benign_tumors.jpg",
-    "bytes": 22405
+    "file": "benign_tumors.jpg"
   },
   {
     "code": "bullous",
     "label": "Bullous",
-    "file": "bullous.jpg",
-    "bytes": 18406
+    "file": "bullous.jpg"
   },
   {
     "code": "candidiasis",
     "label": "Candidiasis",
-    "file": "candidiasis.jpg",
-    "bytes": 22108
+    "file": "candidiasis.jpg"
   },
   {
     "code": "drug_eruption",
     "label": "Drug Reaction",
-    "file": "drug_eruption.jpg",
-    "bytes": 9511
+    "file": "drug_eruption.jpg"
   },
   {
     "code": "eczema",
     "label": "Eczema",
-    "file": "eczema.jpg",
-    "bytes": 20958
+    "file": "eczema.jpg"
   },
   {
     "code": "infestations_bites",
     "label": "Bites/Infestations",
-    "file": "infestations_bites.jpg",
-    "bytes": 17946
+    "file": "infestations_bites.jpg"
   },
   {
     "code": "lichen",
     "label": "Lichen",
-    "file": "lichen.jpg",
-    "bytes": 21503
+    "file": "lichen.jpg"
   },
   {
     "code": "lupus",
     "label": "Lupus",
-    "file": "lupus.jpg",
-    "bytes": 17302
+    "file": "lupus.jpg"
   },
   {
     "code": "moles",
     "label": "Moles",
-    "file": "moles.jpg",
-    "bytes": 23989
+    "file": "moles.jpg"
   },
   {
     "code": "psoriasis",
     "label": "Psoriasis",
-    "file": "psoriasis.jpg",
-    "bytes": 22868
+    "file": "psoriasis.jpg"
   },
   {
     "code": "rosacea",
     "label": "Rosacea",
-    "file": "rosacea.jpg",
-    "bytes": 22496
+    "file": "rosacea.jpg"
   },
   {
     "code": "seborrheic_keratoses",
     "label": "Seborrheic Keratosis",
-    "file": "seborrheic_keratoses.jpg",
-    "bytes": 23834
+    "file": "seborrheic_keratoses.jpg"
   },
   {
     "code": "skin_cancer",
     "label": "Skin Cancer",
-    "file": "skin_cancer.jpg",
-    "bytes": 22941
+    "file": "skin_cancer.jpg"
   },
   {
     "code": "sun_damage",
     "label": "Sun Damage",
-    "file": "sun_damage.jpg",
-    "bytes": 24759
+    "file": "sun_damage.jpg"
   },
   {
     "code": "tinea",
     "label": "Tinea",
-    "file": "tinea.jpg",
-    "bytes": 21090
+    "file": "tinea.jpg"
   },
   {
     "code": "normal",
     "label": "Normal",
-    "file": "normal.jpg",
-    "bytes": 3319
+    "file": "normal.jpg"
   },
   {
     "code": "vascular_tumors",
     "label": "Vascular Tumor",
-    "file": "vascular_tumors.jpg",
-    "bytes": 18859
+    "file": "vascular_tumors.jpg"
   },
   {
     "code": "vasculitis",
     "label": "Vasculitis",
-    "file": "vasculitis.jpg",
-    "bytes": 16834
+    "file": "vasculitis.jpg"
   },
   {
     "code": "vitiligo",
     "label": "Vitiligo",
-    "file": "vitiligo.jpg",
-    "bytes": 9052
+    "file": "vitiligo.jpg"
   },
   {
     "code": "warts",
     "label": "Warts",
-    "file": "warts.jpg",
-    "bytes": 20582
+    "file": "warts.jpg"
   }
 ]

@@ -39,7 +39,7 @@ if (document.getElementById("dropzone")) {
   const habitSuggestList = document.getElementById("habit-suggest-list");
   const habitSuggestAdd = document.getElementById("habit-suggest-add");
   const habitSuggestStatus = document.getElementById("habit-suggest-status");
-  const sampleGrid = document.getElementById("sample-grid");
+  const sampleSelect = document.getElementById("sample-select");
 
   const PHOTO_TIPS_KEY = "skinscan_photo_tips_skipped";
   const SAMPLES_BASE = "samples";
@@ -48,7 +48,7 @@ if (document.getElementById("dropzone")) {
   let latestAnalysis = null;
   let imageDataUrl = null;
   let pendingHabitIds = [];
-  let selectedSampleCode = null;
+  let sampleCatalog = [];
 
   function setResultsVisible(visible) {
     resultsSection.classList.toggle("hidden", !visible);
@@ -188,13 +188,6 @@ if (document.getElementById("dropzone")) {
     syncAnalyzeEnabled();
   }
 
-  function markSelectedSample(code) {
-    selectedSampleCode = code || null;
-    sampleGrid?.querySelectorAll(".sample-card").forEach((card) => {
-      card.classList.toggle("is-selected", card.dataset.code === code);
-    });
-  }
-
   async function loadSample(sample) {
     setStatus(`Loading ${sample.label} sample…`);
     try {
@@ -206,51 +199,43 @@ if (document.getElementById("dropzone")) {
       });
       acknowledgeTipsForSample();
       handleFile(file);
-      markSelectedSample(sample.code);
+      if (sampleSelect) sampleSelect.value = sample.code;
       setStatus(
         `Loaded demo sample: ${sample.label}. Press Analyze photo to see the ensemble result.`
       );
     } catch (error) {
       setStatus(error.message || "Could not load that sample.", true);
+      if (sampleSelect) sampleSelect.value = "";
     }
   }
 
-  async function renderSampleGallery() {
-    if (!sampleGrid) return;
+  async function initSamplePicker() {
+    if (!sampleSelect) return;
     try {
       const response = await fetch(`${SAMPLES_BASE}/catalog.json`);
       if (!response.ok) throw new Error("unavailable");
-      const catalog = await response.json();
-      sampleGrid.innerHTML = catalog
+      sampleCatalog = await response.json();
+      const options = sampleCatalog
+        .slice()
+        .sort((a, b) => a.label.localeCompare(b.label))
         .map(
-          (sample) => `
-          <button
-            type="button"
-            class="sample-card"
-            data-code="${sample.code}"
-            data-file="${sample.file}"
-            data-label="${sample.label}"
-            aria-label="Load ${sample.label} sample"
-          >
-            <img src="${SAMPLES_BASE}/${sample.file}" alt="" loading="lazy" width="130" height="130" />
-            <span class="sample-card-label">${sample.label}</span>
-          </button>
-        `
+          (sample) =>
+            `<option value="${sample.code}">${sample.label}</option>`
         )
         .join("");
+      sampleSelect.innerHTML =
+        `<option value="">Select a condition…</option>` + options;
 
-      sampleGrid.querySelectorAll(".sample-card").forEach((card) => {
-        card.addEventListener("click", () => {
-          loadSample({
-            code: card.dataset.code,
-            file: card.dataset.file,
-            label: card.dataset.label,
-          });
-        });
+      sampleSelect.addEventListener("change", () => {
+        const code = sampleSelect.value;
+        if (!code) return;
+        const sample = sampleCatalog.find((item) => item.code === code);
+        if (sample) loadSample(sample);
       });
     } catch {
-      sampleGrid.innerHTML =
-        '<p class="muted">Sample photos are unavailable right now.</p>';
+      sampleSelect.innerHTML =
+        `<option value="">Sample photos unavailable</option>`;
+      sampleSelect.disabled = true;
     }
   }
 
@@ -589,5 +574,5 @@ if (document.getElementById("dropzone")) {
     setResultsVisible(true);
   }
 
-  renderSampleGallery();
+  initSamplePicker();
 }
