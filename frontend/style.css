@@ -429,8 +429,6 @@ body.is-web .bottom-tabs [data-tab="habits"] {
     max-width: none;
     margin: 0;
     flex: none;
-    position: sticky;
-    top: 88px;
   }
 
   .analyze-page .results {
