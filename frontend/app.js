@@ -39,13 +39,16 @@ if (document.getElementById("dropzone")) {
   const habitSuggestList = document.getElementById("habit-suggest-list");
   const habitSuggestAdd = document.getElementById("habit-suggest-add");
   const habitSuggestStatus = document.getElementById("habit-suggest-status");
+  const sampleGrid = document.getElementById("sample-grid");
 
   const PHOTO_TIPS_KEY = "skinscan_photo_tips_skipped";
+  const SAMPLES_BASE = "samples";
 
   let selectedFile = null;
   let latestAnalysis = null;
   let imageDataUrl = null;
   let pendingHabitIds = [];
+  let selectedSampleCode = null;
 
   function setResultsVisible(visible) {
     resultsSection.classList.toggle("hidden", !visible);
@@ -174,6 +177,83 @@ if (document.getElementById("dropzone")) {
   cameraCaptureBtn?.addEventListener("click", () => captureFromNative("CAMERA"));
   cameraLibraryBtn?.addEventListener("click", () => captureFromNative("PHOTOS"));
 
+  function acknowledgeTipsForSample() {
+    photoChecklist
+      ?.querySelectorAll('input[type="checkbox"]')
+      .forEach((box) => {
+        box.checked = true;
+        box.closest(".photo-check-row")?.classList.add("is-checked");
+      });
+    updatePhotoTipsStatus();
+    syncAnalyzeEnabled();
+  }
+
+  function markSelectedSample(code) {
+    selectedSampleCode = code || null;
+    sampleGrid?.querySelectorAll(".sample-card").forEach((card) => {
+      card.classList.toggle("is-selected", card.dataset.code === code);
+    });
+  }
+
+  async function loadSample(sample) {
+    setStatus(`Loading ${sample.label} sample…`);
+    try {
+      const response = await fetch(`${SAMPLES_BASE}/${sample.file}`);
+      if (!response.ok) throw new Error("Sample unavailable");
+      const blob = await response.blob();
+      const file = new File([blob], sample.file, {
+        type: blob.type || "image/jpeg",
+      });
+      acknowledgeTipsForSample();
+      handleFile(file);
+      markSelectedSample(sample.code);
+      setStatus(
+        `Loaded demo sample: ${sample.label}. Press Analyze photo to see the ensemble result.`
+      );
+    } catch (error) {
+      setStatus(error.message || "Could not load that sample.", true);
+    }
+  }
+
+  async function renderSampleGallery() {
+    if (!sampleGrid) return;
+    try {
+      const response = await fetch(`${SAMPLES_BASE}/catalog.json`);
+      if (!response.ok) throw new Error("unavailable");
+      const catalog = await response.json();
+      sampleGrid.innerHTML = catalog
+        .map(
+          (sample) => `
+          <button
+            type="button"
+            class="sample-card"
+            data-code="${sample.code}"
+            data-file="${sample.file}"
+            data-label="${sample.label}"
+            aria-label="Load ${sample.label} sample"
+          >
+            <img src="${SAMPLES_BASE}/${sample.file}" alt="" loading="lazy" width="130" height="130" />
+            <span class="sample-card-label">${sample.label}</span>
+          </button>
+        `
+        )
+        .join("");
+
+      sampleGrid.querySelectorAll(".sample-card").forEach((card) => {
+        card.addEventListener("click", () => {
+          loadSample({
+            code: card.dataset.code,
+            file: card.dataset.file,
+            label: card.dataset.label,
+          });
+        });
+      });
+    } catch {
+      sampleGrid.innerHTML =
+        '<p class="muted">Sample photos are unavailable right now.</p>';
+    }
+  }
+
   function handleFile(file) {
     if (!file) return;
 
@@ -251,6 +331,7 @@ if (document.getElementById("dropzone")) {
     latestAnalysis = null;
     imageDataUrl = null;
     pendingHabitIds = [];
+    markSelectedSample(null);
     setStatus("");
   });
 
@@ -507,4 +588,6 @@ if (document.getElementById("dropzone")) {
     renderHabitSuggestions(data);
     setResultsVisible(true);
   }
+
+  renderSampleGallery();
 }

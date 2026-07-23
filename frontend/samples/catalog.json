@@ -1,0 +1,134 @@
+[
+  {
+    "code": "acne",
+    "label": "Acne",
+    "file": "acne.jpg",
+    "bytes": 15424
+  },
+  {
+    "code": "actinic_keratosis",
+    "label": "Actinic Keratosis",
+    "file": "actinic_keratosis.jpg",
+    "bytes": 7783
+  },
+  {
+    "code": "benign_tumors",
+    "label": "Benign Tumor",
+    "file": "benign_tumors.jpg",
+    "bytes": 22405
+  },
+  {
+    "code": "bullous",
+    "label": "Bullous",
+    "file": "bullous.jpg",
+    "bytes": 18406
+  },
+  {
+    "code": "candidiasis",
+    "label": "Candidiasis",
+    "file": "candidiasis.jpg",
+    "bytes": 22108
+  },
+  {
+    "code": "drug_eruption",
+    "label": "Drug Reaction",
+    "file": "drug_eruption.jpg",
+    "bytes": 9511
+  },
+  {
+    "code": "eczema",
+    "label": "Eczema",
+    "file": "eczema.jpg",
+    "bytes": 20958
+  },
+  {
+    "code": "infestations_bites",
+    "label": "Bites/Infestations",
+    "file": "infestations_bites.jpg",
+    "bytes": 17946
+  },
+  {
+    "code": "lichen",
+    "label": "Lichen",
+    "file": "lichen.jpg",
+    "bytes": 21503
+  },
+  {
+    "code": "lupus",
+    "label": "Lupus",
+    "file": "lupus.jpg",
+    "bytes": 17302
+  },
+  {
+    "code": "moles",
+    "label": "Moles",
+    "file": "moles.jpg",
+    "bytes": 23989
+  },
+  {
+    "code": "psoriasis",
+    "label": "Psoriasis",
+    "file": "psoriasis.jpg",
+    "bytes": 22868
+  },
+  {
+    "code": "rosacea",
+    "label": "Rosacea",
+    "file": "rosacea.jpg",
+    "bytes": 22496
+  },
+  {
+    "code": "seborrheic_keratoses",
+    "label": "Seborrheic Keratosis",
+    "file": "seborrheic_keratoses.jpg",
+    "bytes": 23834
+  },
+  {
+    "code": "skin_cancer",
+    "label": "Skin Cancer",
+    "file": "skin_cancer.jpg",
+    "bytes": 22941
+  },
+  {
+    "code": "sun_damage",
+    "label": "Sun Damage",
+    "file": "sun_damage.jpg",
+    "bytes": 24759
+  },
+  {
+    "code": "tinea",
+    "label": "Tinea",
+    "file": "tinea.jpg",
+    "bytes": 21090
+  },
+  {
+    "code": "normal",
+    "label": "Normal",
+    "file": "normal.jpg",
+    "bytes": 3319
+  },
+  {
+    "code": "vascular_tumors",
+    "label": "Vascular Tumor",
+    "file": "vascular_tumors.jpg",
+    "bytes": 18859
+  },
+  {
+    "code": "vasculitis",
+    "label": "Vasculitis",
+    "file": "vasculitis.jpg",
+    "bytes": 16834
+  },
+  {
+    "code": "vitiligo",
+    "label": "Vitiligo",
+    "file": "vitiligo.jpg",
+    "bytes": 9052
+  },
+  {
+    "code": "warts",
+    "label": "Warts",
+    "file": "warts.jpg",
+    "bytes": 20582
+  }
+]

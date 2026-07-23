@@ -438,6 +438,11 @@ body.is-web .bottom-tabs [data-tab="habits"] {
     width: 100%;
   }
 
+  .analyze-page .sample-gallery {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
   .analyze-page .dropzone {
     min-height: 360px;
     padding: 64px 32px;
@@ -460,7 +465,8 @@ body.is-web .bottom-tabs [data-tab="habits"] {
     gap: 28px 40px;
   }
 
-  .analyze-page.has-results .photo-guide {
+  .analyze-page.has-results .photo-guide,
+  .analyze-page.has-results .sample-gallery {
     display: none;
   }
 
@@ -1325,6 +1331,108 @@ body.is-web .bottom-tabs [data-tab="habits"] {
 .photo-tips-status {
   font-size: 0.875rem;
   font-weight: 600;
+}
+
+/* Sample photo gallery */
+.sample-gallery {
+  margin: 8px 0 28px;
+  padding: 22px 20px 18px;
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.sample-gallery-header h2 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  margin-bottom: 6px;
+}
+
+.sample-gallery-lead {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 16px;
+  max-width: 46rem;
+}
+
+.sample-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(118px, 1fr));
+  gap: 12px;
+}
+
+.sample-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--cream);
+  cursor: pointer;
+  text-align: left;
+  overflow: hidden;
+  font-family: var(--font);
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+}
+
+.sample-card:hover,
+.sample-card:focus-visible {
+  border-color: var(--green);
+  outline: none;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+.sample-card.is-selected {
+  border-color: var(--green-dark);
+  box-shadow: 0 0 0 2px rgba(27, 67, 50, 0.15);
+}
+
+.sample-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+  background: var(--cream-dark);
+}
+
+.sample-card-label {
+  padding: 0 10px 10px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  line-height: 1.3;
+}
+
+.sample-attribution {
+  margin-top: 14px;
+  font-size: 0.8125rem;
+}
+
+.sample-attribution a {
+  color: var(--green-dark);
+  font-weight: 700;
+}
+
+.analyze-page.has-results .sample-gallery {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .sample-gallery {
+    margin-top: 12px;
+    padding: 24px 24px 20px;
+  }
+
+  .sample-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 14px;
+  }
 }
 
 /* Habit suggestions after analyze */
