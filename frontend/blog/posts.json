@@ -1,7 +1,17 @@
 {
-  "last_updated": "2026-07-15",
+  "last_updated": "2026-08-01",
   "update_note": "Posts are refreshed automatically from trusted .org and .edu sources every two weeks.",
   "posts": [
+    {
+      "id": "your-july-update-the-truth-about-sunburn",
+      "title": "Your July Update: The Truth About Sunburn",
+      "summary": "July is UV Safety Awareness Month and we want to share the truth about sunburn. It hurts, it happens fast and it causes lasting damage to your skin. You may not know this, but your skin remembers your sunburn long after it’s gone. The facts:",
+      "url": "https://www.skincancer.org/blog/your-july-update-the-truth-about-sunburn/",
+      "source": "Skin Cancer Foundation",
+      "domain": "skincancer.org",
+      "category": "advice",
+      "published": "2026-07-15"
+    },
     {
       "id": "ask-the-expert-car-window-tint-for-uv-protection",
       "title": "Ask the Expert: Car Window Tint for UV Protection",
