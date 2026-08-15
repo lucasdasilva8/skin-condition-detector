@@ -1,7 +1,67 @@
 {
-  "last_updated": "2026-08-01",
+  "last_updated": "2026-08-15",
   "update_note": "Posts are refreshed automatically from trusted .org and .edu sources every two weeks.",
   "posts": [
+    {
+      "id": "drug-rash-with-eosinophilia-and-systemic-symptoms",
+      "title": "Drug Rash with Eosinophilia and Systemic Symptoms",
+      "summary": "Source: Genetic and Rare Diseases Information Center - Related MedlinePlus Pages: Drug Reactions , Eosinophilic Disorders",
+      "url": "https://rarediseases.info.nih.gov/diseases/13629/drug-rash-with-eosinophilia-and-systemic-symptoms",
+      "source": "MedlinePlus (NIH)",
+      "domain": "medlineplus.gov",
+      "category": "study",
+      "published": "2026-08-13"
+    },
+    {
+      "id": "your-summer-sun-safety-update",
+      "title": "Your Summer Sun Safety Update",
+      "summary": "August is Summer Sun Safety Month, and we’re sending a friendly reminder to make sun protection a daily, lasting habit. Sun-protective (UPF) clothing is the simplest way to stay sun safe; unlike sunscreen, you never need to reapply. Enjoy the final weeks of summer 2026 and be…",
+      "url": "https://www.skincancer.org/blog/2026-your-summer-sun-safety-update/",
+      "source": "Skin Cancer Foundation",
+      "domain": "skincancer.org",
+      "category": "advice",
+      "published": "2026-08-12"
+    },
+    {
+      "id": "hidradenitis-suppurativa-managing-painful-skin-bumps-in-kids-and-teens",
+      "title": "Hidradenitis Suppurativa: Managing Painful Skin Bumps in Kids and Teens",
+      "summary": "Source: American Academy of Pediatrics Related MedlinePlus Pages: Hidradenitis Suppurativa",
+      "url": "https://www.healthychildren.org/English/health-issues/conditions/skin/Pages/hidradenitis-suppurativa-managing-painful-skin-bumps-in-kids-&-teens.aspx",
+      "source": "MedlinePlus (NIH)",
+      "domain": "medlineplus.gov",
+      "category": "study",
+      "published": "2026-08-10"
+    },
+    {
+      "id": "2026-destination-healthy-skin-mid-season-update-more-than-1-400-screenings-to-da",
+      "title": "2026 Destination Healthy Skin Mid-Season Update: More Than 1,400 Screenings to Date!",
+      "summary": "From April to July 2026, the Destination Healthy Skin free skin cancer screening and education program traveled down the East coast and all around the South. At the halfway point in the journey, volunteer providers screened more than 1,400 people.",
+      "url": "https://www.skincancer.org/blog/mid-season-destination-healthy-skin-update-more-than-1400-screenings-in-2026/",
+      "source": "Skin Cancer Foundation",
+      "domain": "skincancer.org",
+      "category": "advice",
+      "published": "2026-08-03"
+    },
+    {
+      "id": "ask-the-expert-is-sunlight-dangerous-for-animals",
+      "title": "Ask the Expert: Is Sunlight Dangerous for Animals?",
+      "summary": "Does your cat, dog or other pet love to lie in the sun? Yes, they can get skin cancer! Here, risk factors and warning signs to watch for.",
+      "url": "https://www.skincancer.org/blog/ask-the-expert-is-sunlight-dangerous-for-animals/",
+      "source": "Skin Cancer Foundation",
+      "domain": "skincancer.org",
+      "category": "advice",
+      "published": "2026-08-03"
+    },
+    {
+      "id": "you-are-not-a-failure",
+      "title": "You Are Not a Failure!",
+      "summary": "Despite the many lifesaving breakthroughs in treatment for advanced skin cancer in the past 15 years, not every patient responds to them. That “f” word is often used as medical shorthand to describe an unsuccessful treatment. But is it time to retire it? Patients and doctors s…",
+      "url": "https://www.skincancer.org/blog/you-are-not-a-failure/",
+      "source": "Skin Cancer Foundation",
+      "domain": "skincancer.org",
+      "category": "advice",
+      "published": "2026-08-03"
+    },
     {
       "id": "your-july-update-the-truth-about-sunburn",
       "title": "Your July Update: The Truth About Sunburn",
