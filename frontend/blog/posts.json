@@ -1,7 +1,77 @@
 {
-  "last_updated": "2026-08-15",
+  "last_updated": "2026-09-01",
   "update_note": "Posts are refreshed automatically from trusted .org and .edu sources every two weeks.",
   "posts": [
+    {
+      "id": "tattoos-7-unexpected-skin-reactions-and-what-to-do-about-them",
+      "title": "Tattoos: 7 Unexpected Skin Reactions and What to Do about Them",
+      "summary": "Source: American Academy of Dermatology Related MedlinePlus Pages: Piercing and Tattoos",
+      "url": "https://www.aad.org/public/everyday-care/skin-care-basics/tattoos/tattoo-skin-reactions?NoAds",
+      "source": "MedlinePlus (NIH)",
+      "domain": "medlineplus.gov",
+      "category": "study",
+      "published": "2026-08-27"
+    },
+    {
+      "id": "uv-index-know-your-risk",
+      "title": "UV Index: Know Your Risk",
+      "summary": "Source: Skin Cancer Foundation Related MedlinePlus Pages: Sun Exposure",
+      "url": "https://www.skincancer.org/blog/the-uv-index-know-your-risk/",
+      "source": "MedlinePlus (NIH)",
+      "domain": "medlineplus.gov",
+      "category": "study",
+      "published": "2026-08-25"
+    },
+    {
+      "id": "uv-index-scale",
+      "title": "UV Index Scale",
+      "summary": "Source: Environmental Protection Agency Related MedlinePlus Pages: Sun Exposure",
+      "url": "https://www.epa.gov/sunsafety/uv-index-scale-0",
+      "source": "MedlinePlus (NIH)",
+      "domain": "medlineplus.gov",
+      "category": "study",
+      "published": "2026-08-25"
+    },
+    {
+      "id": "sun-protective-clothing",
+      "title": "Sun-Protective Clothing",
+      "summary": "Source: Skin Cancer Foundation Related MedlinePlus Pages: Sun Exposure",
+      "url": "https://www.skincancer.org/skin-cancer-prevention/sun-protection/sun-protective-clothing/",
+      "source": "MedlinePlus (NIH)",
+      "domain": "medlineplus.gov",
+      "category": "study",
+      "published": "2026-08-25"
+    },
+    {
+      "id": "photosensitivity-and-your-skin",
+      "title": "Photosensitivity and Your Skin",
+      "summary": "Source: Skin Cancer Foundation Related MedlinePlus Pages: Sun Exposure",
+      "url": "https://www.skincancer.org/risk-factors/photosensitivity/",
+      "source": "MedlinePlus (NIH)",
+      "domain": "medlineplus.gov",
+      "category": "study",
+      "published": "2026-08-25"
+    },
+    {
+      "id": "caring-for-your-skin-in-menopause",
+      "title": "Caring for Your Skin in Menopause",
+      "summary": "Source: American Academy of Dermatology - Related MedlinePlus Pages: Menopause , Skin Aging",
+      "url": "https://www.aad.org/public/everyday-care/skin-care-secrets/anti-aging/skin-care-during-menopause?NoAds",
+      "source": "MedlinePlus (NIH)",
+      "domain": "medlineplus.gov",
+      "category": "study",
+      "published": "2026-08-23"
+    },
+    {
+      "id": "whitney-s-melanoma-story-the-skin-check-that-changed-everything",
+      "title": "Whitney’s Melanoma Story: The Skin Check that Changed Everything",
+      "summary": "Whitney’s melanoma did not look suspicious, but she trusted her instincts and advocated for a biopsy. She shares her story to spread skin cancer awareness.",
+      "url": "https://www.skincancer.org/blog/whitneys-melanoma-story-the-skin-check-that-changed-everything/",
+      "source": "Skin Cancer Foundation",
+      "domain": "skincancer.org",
+      "category": "advice",
+      "published": "2026-08-17"
+    },
     {
       "id": "drug-rash-with-eosinophilia-and-systemic-symptoms",
       "title": "Drug Rash with Eosinophilia and Systemic Symptoms",
@@ -17,6 +87,26 @@
       "title": "Your Summer Sun Safety Update",
       "summary": "August is Summer Sun Safety Month, and we’re sending a friendly reminder to make sun protection a daily, lasting habit. Sun-protective (UPF) clothing is the simplest way to stay sun safe; unlike sunscreen, you never need to reapply. Enjoy the final weeks of summer 2026 and be…",
       "url": "https://www.skincancer.org/blog/2026-your-summer-sun-safety-update/",
+      "source": "Skin Cancer Foundation",
+      "domain": "skincancer.org",
+      "category": "advice",
+      "published": "2026-08-12"
+    },
+    {
+      "id": "teen-warns-tanmaxxing-is-skin-cancer-maxxing",
+      "title": "Teen Warns: Tanmaxxing Is Skin Cancer Maxxing",
+      "summary": "Tanmaxxing is a popular trend among teens, despite a mountain of evidence about the dangers of UV radiation and increased skin cancer risk. The trend has prompted one teen to speak up by sharing the truth about tanmaxxing.",
+      "url": "https://www.skincancer.org/blog/teen-warns-tanmaxxing-is-skin-cancer-maxxing/",
+      "source": "Skin Cancer Foundation",
+      "domain": "skincancer.org",
+      "category": "advice",
+      "published": "2026-08-12"
+    },
+    {
+      "id": "the-skin-cancer-risk-he-never-knew",
+      "title": "The Skin Cancer Risk He Never Knew",
+      "summary": "Immunosuppressants are lifesaving for patients with solid organ transplants. However, these medications leave the body more vulnerable to infections and skin cancer.",
+      "url": "https://www.skincancer.org/blog/the-skin-cancer-risk-he-never-knew/",
       "source": "Skin Cancer Foundation",
       "domain": "skincancer.org",
       "category": "advice",
@@ -151,66 +241,6 @@
       "domain": "skincancer.org",
       "category": "advice",
       "published": "2026-05-08"
-    },
-    {
-      "id": "dermatologists-expose-the-truth-about-skin-cancer",
-      "title": "Dermatologists Expose the Truth About Skin Cancer",
-      "summary": "As skin cancer rates continue to rise, our physician members are working with us to address an alarming surge in misinformation online.",
-      "url": "https://www.skincancer.org/blog/dermatologists-expose-the-truth-about-skin-cancer/",
-      "source": "Skin Cancer Foundation",
-      "domain": "skincancer.org",
-      "category": "advice",
-      "published": "2026-04-30"
-    },
-    {
-      "id": "your-skin-cancer-awareness-month-update",
-      "title": "Your Skin Cancer Awareness Month Update",
-      "summary": "May is Skin Cancer Awareness Month, the perfect opportunity to share the truth about the dangers of skin cancer and the importance of early detection and prevention. We hope you’ll join us!",
-      "url": "https://www.skincancer.org/blog/your-skin-cancer-awareness-month-update-2026/",
-      "source": "Skin Cancer Foundation",
-      "domain": "skincancer.org",
-      "category": "advice",
-      "published": "2026-04-28"
-    },
-    {
-      "id": "harvard-sunscreen-basics",
-      "title": "Sun protection basics",
-      "summary": "Harvard Health explains why daily broad-spectrum sunscreen, shade, and protective clothing remain the foundation of skin cancer prevention.",
-      "url": "https://www.health.harvard.edu/staying-healthy/the-science-of-sunscreen",
-      "source": "Harvard Health Publishing",
-      "domain": "health.harvard.edu",
-      "category": "advice",
-      "published": "2025-06-01"
-    },
-    {
-      "id": "aad-skin-check",
-      "title": "How to perform a skin self-exam",
-      "summary": "The American Academy of Dermatology recommends monthly full-body checks to catch changing moles and new spots early.",
-      "url": "https://www.aad.org/public/diseases/skin-cancer/find/at-home",
-      "source": "American Academy of Dermatology",
-      "domain": "aad.org",
-      "category": "advice",
-      "published": "2025-05-15"
-    },
-    {
-      "id": "skincancer-melanoma-awareness",
-      "title": "Melanoma awareness and early detection",
-      "summary": "The Skin Cancer Foundation outlines warning signs and why early dermatologist evaluation improves outcomes.",
-      "url": "https://www.skincancer.org/skin-cancer-information/melanoma/",
-      "source": "Skin Cancer Foundation",
-      "domain": "skincancer.org",
-      "category": "advice",
-      "published": "2025-04-20"
-    },
-    {
-      "id": "mayo-eczema-care",
-      "title": "Eczema self-care guidance",
-      "summary": "Mayo Clinic covers gentle skin care, trigger avoidance, and when moisturizing and medical treatment may help.",
-      "url": "https://www.mayoclinic.org/diseases-conditions/atopic-dermatitis-eczema/diagnosis-treatment/drc-20353279",
-      "source": "Mayo Clinic",
-      "domain": "mayoclinic.org",
-      "category": "advice",
-      "published": "2025-03-10"
     }
   ]
 }
