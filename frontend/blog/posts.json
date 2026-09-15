@@ -1,7 +1,27 @@
 {
-  "last_updated": "2026-09-01",
+  "last_updated": "2026-09-15",
   "update_note": "Posts are refreshed automatically from trusted .org and .edu sources every two weeks.",
   "posts": [
+    {
+      "id": "albinism-for-parents",
+      "title": "Albinism (For Parents)",
+      "summary": "Source: Nemours Foundation Related MedlinePlus Pages: Skin Pigmentation Disorders",
+      "url": "https://kidshealth.org/en/parents/albinism.html",
+      "source": "MedlinePlus (NIH)",
+      "domain": "medlineplus.gov",
+      "category": "study",
+      "published": "2026-09-08"
+    },
+    {
+      "id": "acanthosis-nigricans-an-for-parents",
+      "title": "Acanthosis Nigricans (AN) (For Parents)",
+      "summary": "Source: Nemours Foundation Related MedlinePlus Pages: Skin Pigmentation Disorders",
+      "url": "https://kidshealth.org/en/parents/acanthosis.html",
+      "source": "MedlinePlus (NIH)",
+      "domain": "medlineplus.gov",
+      "category": "study",
+      "published": "2026-09-08"
+    },
     {
       "id": "tattoos-7-unexpected-skin-reactions-and-what-to-do-about-them",
       "title": "Tattoos: 7 Unexpected Skin Reactions and What to Do about Them",
@@ -11,6 +31,36 @@
       "domain": "medlineplus.gov",
       "category": "study",
       "published": "2026-08-27"
+    },
+    {
+      "id": "finding-their-way-to-honor-their-family-history",
+      "title": "Finding Their Way to Honor Their Family History",
+      "summary": "Jake and Alexis Schweitzer are working to make sun protection a habit for their generation, and to honor their dad’s father, who died of melanoma when he was 43.",
+      "url": "https://www.skincancer.org/blog/finding-their-way-to-honor-their-family-history/",
+      "source": "Skin Cancer Foundation",
+      "domain": "skincancer.org",
+      "category": "advice",
+      "published": "2026-08-26"
+    },
+    {
+      "id": "redefining-what-it-means-to-be-a-beauty-queen",
+      "title": "Redefining What It Means to Be a Beauty Queen",
+      "summary": "Sophia Xia, former Miss Illinois Teen USA, is a scholar, researcher, athlete, mentor and leader of a youth skin health advocacy movement.",
+      "url": "https://www.skincancer.org/blog/redefining-what-it-means-to-be-a-beauty-queen/",
+      "source": "Skin Cancer Foundation",
+      "domain": "skincancer.org",
+      "category": "advice",
+      "published": "2026-08-26"
+    },
+    {
+      "id": "a-minecraft-streamer-who-speeds-up-for-good",
+      "title": "A Minecraft Streamer Who Speeds Up for Good",
+      "summary": "When lightning-fast Minecraft player Anthony Salzarulo (aka Couriway) learned that his girlfriend was diagnosed with melanoma, he snapped into action to help.",
+      "url": "https://www.skincancer.org/blog/a-minecraft-streamer-who-speeds-up-for-good/",
+      "source": "Skin Cancer Foundation",
+      "domain": "skincancer.org",
+      "category": "advice",
+      "published": "2026-08-26"
     },
     {
       "id": "uv-index-know-your-risk",
@@ -191,56 +241,6 @@
       "domain": "skincancer.org",
       "category": "advice",
       "published": "2026-06-23"
-    },
-    {
-      "id": "dangerous-extremes",
-      "title": "Dangerous Extremes",
-      "summary": "Obsession with using products to either lighten or darken the skin can be hazardous to your health.",
-      "url": "https://www.skincancer.org/blog/dangerous-extremes/",
-      "source": "Skin Cancer Foundation",
-      "domain": "skincancer.org",
-      "category": "advice",
-      "published": "2026-06-23"
-    },
-    {
-      "id": "how-much-sunscreen-is-enough",
-      "title": "How Much Sunscreen Is Enough?",
-      "summary": "You may think you’re doing the right thing when it comes to sunscreen. But you're probably not using nearly enough. Check out our new approach on how to apply!",
-      "url": "https://www.skincancer.org/blog/how-much-sunscreen-in-enough/",
-      "source": "Skin Cancer Foundation",
-      "domain": "skincancer.org",
-      "category": "advice",
-      "published": "2026-06-16"
-    },
-    {
-      "id": "alternatives-to-animal-testing-for-sunscreen-a-cosmetic-chemist-s-perspective",
-      "title": "Alternatives to Animal Testing for Sunscreen: A Cosmetic Chemist’s Perspective",
-      "summary": "Backlash to the animal testing required for FDA approval of sunscreen in the U.S. has grown, especially as viable alternatives have emerged. Many, from animal rights activists to members of Congress, are hopeful as the FDA commits to reducing animal testing.",
-      "url": "https://www.skincancer.org/blog/alternatives-to-animal-testing-for-sunscreen-a-cosmetic-chemists-perspective/",
-      "source": "Skin Cancer Foundation",
-      "domain": "skincancer.org",
-      "category": "advice",
-      "published": "2026-06-08"
-    },
-    {
-      "id": "we-need-sunscreen-innovation-a-cosmetic-chemist-s-perspective",
-      "title": "We Need Sunscreen Innovation: A Cosmetic Chemist’s Perspective",
-      "summary": "For a product that has been proven to help prevent skin cancer, sunscreen in the U.S. has had a rough journey lately, from a tidal wave of misinformation to regulatory reroutes and delays. Here, helpful advice — and good news: the FDA approval of the first new sunscreen active…",
-      "url": "https://www.skincancer.org/blog/we-need-sunscreen-innovation-a-cosmetic-chemists-perspective/",
-      "source": "Skin Cancer Foundation",
-      "domain": "skincancer.org",
-      "category": "advice",
-      "published": "2026-06-08"
-    },
-    {
-      "id": "blitz-of-fan-generosity-to-tackle-skin-cancer",
-      "title": "Blitz of Fan Generosity to Tackle Skin Cancer",
-      "summary": "Fans of Sean McDermott, former coach of the Buffalo Bills, wouldn’t let him stay sidelined for long. They showed their support with a fundraising drive for The Skin Cancer Foundation in his honor. A big win in the fight against skin cancer.",
-      "url": "https://www.skincancer.org/blog/blitz-of-fan-generosity-to-tackle-skin-cancer/",
-      "source": "Skin Cancer Foundation",
-      "domain": "skincancer.org",
-      "category": "advice",
-      "published": "2026-05-08"
     }
   ]
 }
