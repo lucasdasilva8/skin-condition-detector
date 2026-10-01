@@ -1,7 +1,17 @@
 {
-  "last_updated": "2026-09-15",
+  "last_updated": "2026-10-01",
   "update_note": "Posts are refreshed automatically from trusted .org and .edu sources every two weeks.",
   "posts": [
+    {
+      "id": "your-september-skin-health-update",
+      "title": "Your September Skin Health Update",
+      "summary": "While summer 2026 is coming to an end, that does not signal the end of your daily sun protection routine. Sun safety matters in every season, because each time your skin is exposed to UV rays without protection, it adds to the damage that can result in accelerated signs of agi…",
+      "url": "https://www.skincancer.org/blog/your-september-skin-health-update-2026/",
+      "source": "Skin Cancer Foundation",
+      "domain": "skincancer.org",
+      "category": "advice",
+      "published": "2026-09-16"
+    },
     {
       "id": "albinism-for-parents",
       "title": "Albinism (For Parents)",
@@ -231,16 +241,6 @@
       "domain": "skincancer.org",
       "category": "advice",
       "published": "2026-06-30"
-    },
-    {
-      "id": "your-june-update-the-truth-about-sunscreen",
-      "title": "Your June Update: The Truth About Sunscreen",
-      "summary": "Sunscreen is trending, and with good reason. It’s an important part of a complete sun protection strategy to safeguard your skin from damage that accelerates the signs of aging and increases your skin cancer risk.",
-      "url": "https://www.skincancer.org/blog/your-june-update-the-truth-about-sunscreen-2026/",
-      "source": "Skin Cancer Foundation",
-      "domain": "skincancer.org",
-      "category": "advice",
-      "published": "2026-06-23"
     }
   ]
 }
