@@ -1,7 +1,27 @@
 {
-  "last_updated": "2026-10-01",
+  "last_updated": "2026-10-15",
   "update_note": "Posts are refreshed automatically from trusted .org and .edu sources every two weeks.",
   "posts": [
+    {
+      "id": "your-october-update-sun-damage-your-eyes",
+      "title": "Your October Update: Sun Damage & Your Eyes",
+      "summary": "Happy fall! No matter how cool the temperature, the sun’s ultraviolet rays can still cause damage to your skin and eyes within just a few minutes. Yes, even though it’s October, you can still get sunburned. Protect your skin with sunscreen, shade and clothing. And prevent sun…",
+      "url": "https://www.skincancer.org/blog/2026-10-newsletter/",
+      "source": "Skin Cancer Foundation",
+      "domain": "skincancer.org",
+      "category": "advice",
+      "published": "2026-10-14"
+    },
+    {
+      "id": "young-survivor-warns-people-aren-t-scared-enough-of-skin-cancer",
+      "title": "Young Survivor Warns: “People Aren’t Scared Enough of Skin Cancer”",
+      "summary": "Brinly was just 23 years old when she popped a little pimple on her upper lip. To her alarm, the lesion began to grow and change, prompting her to see a doctor. After several failed treatments, Brinly was referred to a dermatologist and got a shocking diagnosis: Her “pimple” w…",
+      "url": "https://www.skincancer.org/blog/skin-cancer-at-age-23/",
+      "source": "Skin Cancer Foundation",
+      "domain": "skincancer.org",
+      "category": "advice",
+      "published": "2026-09-30"
+    },
     {
       "id": "your-september-skin-health-update",
       "title": "Your September Skin Health Update",
@@ -221,26 +241,6 @@
       "domain": "skincancer.org",
       "category": "advice",
       "published": "2026-07-15"
-    },
-    {
-      "id": "ask-the-expert-car-window-tint-for-uv-protection",
-      "title": "Ask the Expert: Car Window Tint for UV Protection",
-      "summary": "Explore the benefits of car window film or tint for UV protection and safeguard your skin from harmful UV rays.",
-      "url": "https://www.skincancer.org/blog/ask-the-expert-car-window-tint-for-uv-protection/",
-      "source": "Skin Cancer Foundation",
-      "domain": "skincancer.org",
-      "category": "advice",
-      "published": "2026-07-02"
-    },
-    {
-      "id": "ask-the-expert-pregnancy-and-skin-health",
-      "title": "Ask the Expert: Pregnancy and Skin Health",
-      "summary": "There’s lots of information online about pregnancy raising the risk of sunburns. Is that true, or is it misinformation? Our expert sets the record straight!",
-      "url": "https://www.skincancer.org/blog/ask-the-expert-pregnancy-and-skin-health/",
-      "source": "Skin Cancer Foundation",
-      "domain": "skincancer.org",
-      "category": "advice",
-      "published": "2026-06-30"
     }
   ]
 }
